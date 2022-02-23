@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" name="password" />
+    <input type="text" name="confirm_password" />
+
+    <br />
+    <span name="msg"></span>
+
+    <script>
+      function query(name) {
+        // return document.querySelector("name='confirm_password'")
+        return document.querySelector(`[name='${name}']`)
+      }
+
+      let inputs = document.querySelectorAll(
+        "[name='password'], [name='confirm_password']"
+      );
+      console.log(inputs)
+
+      //每个input加上键盘抬起事件
+      [...inputs].map(item => {
+        item.addEventListener("keyup", function() {
+          let msg = ''
+          if(query('password').value != query('confirm_password').value || 
+            query('password').value.length < 5) {
+              msg = '两次密码不一致或者密码长度小于5位'
+          }
+          query('msg').innerHTML  = msg
+        })
+      })
+    </script>
+  </body>
+</html>

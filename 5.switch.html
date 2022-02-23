@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 第三种
+      function message(age) {
+        let msg = "";
+        switch (true) {
+          // case后面可以写表达式
+          case age > 60:
+            msg = "老年";
+            break;
+          case age > 40:
+            msg = "中年";
+            break;
+          default:
+            msg = "青年";
+        }
+        return msg;
+      }
+      console.log(message(30))
+
+      // 第二种
+      let error = "notice";
+      switch (error) {
+        case "notice":
+        case "warning":
+          console.log("提示或警告消息");
+          break;
+        case "error":
+        default:
+          console.log("消息");
+      }
+
+      // 第一种
+      let name = "视频";
+      switch (name) {
+        case "产品":
+          console.log("chenxiu.com");
+          // 终止switch的意思
+          break;
+        case "视频":
+          console.log("xiu.com");
+          break;
+        default:
+          console.log("bin.com");
+      }
+    </script>
+  </body>
+</html>

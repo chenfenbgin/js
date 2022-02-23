@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 创建div元素
+      function div(options = {}) {
+        let div = document.createElement("div");
+        div.style.width = options.width ? options.width : "100px";
+        div.style.height = options.height ? options.height : "200px";
+        div.style.backgroundColor = options.backgroundColor ? options.backgroundColor : "red";
+        // 将div放到body里面
+        document.body.appendChild(div);
+      }
+      div();
+      div({width:"300px", height: "300px", backgroundColor: "green"})
+    </script>
+  </body>
+</html>
