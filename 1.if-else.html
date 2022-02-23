@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="password" name="password" />
+    <span id="msg"></span>
+
+    <script>
+      // 找到name=password的标签，加上keyup事件
+      document
+        .querySelector("[name='password']")
+        .addEventListener("keyup", function () {
+          // 获取当前输入字符串的长度
+          let length = this.value.length;
+          let span = document.querySelector("#msg");
+          let msg = "";
+
+          if (length > 10) {
+            msg = "密码无敌安全";
+          } else if (length > 6) {
+            msg = "中级密码强度";
+          } else {
+            msg = "密码太弱";
+          }
+          span.innerHTML = msg;
+        });
+
+      // if (true) console.log("chenxiu")
+    </script>
+  </body>
+</html>

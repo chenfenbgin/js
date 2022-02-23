@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" name="age" />
+    <span id="msg"></span>
+
+    <script>
+      let span = document.querySelector("#msg");
+      document
+        .querySelector("[name=age]")
+        .addEventListener("keyup", function () {
+          // let msg = "";
+          //判断输入的值
+          // if (this.value > 90) {
+          //   msg = "年龄不能超过90岁";
+          // }
+          // span.innerHTML = msg;
+
+          // 上面方法改进
+          span.innerHTML = this.value >= 90 ? "年龄不能超过90岁" : "";
+        });
+      // let a =  1,
+      //   b = 2,  //number类型
+      //   c = "1";//string类型
+      //   //进行比较的时候，会将c转成number类型再进行比较
+      //   console.log(typeof parseInt(c))//number类型
+      //   console.log(a == c) // true
+      //   console.log(a === c)
+    </script>
+  </body>
+</html>
