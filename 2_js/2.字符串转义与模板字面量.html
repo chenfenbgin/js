@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 字符串连接
+      // let year = '2022'
+      // let site = 'www.baidu.com'
+      // console.log(year + ' - ' + site)
+      // console.log(`${year}-${site}`)
+
+      function show() {
+        return "fengb.com";
+      }
+      // 模板字面量 里面是可以加函数的, 或者表达式等
+      let cd = `www.${show()}`;
+      let cd2 = `www.${4 + 2}`;
+      console.log(cd);
+
+      let array = [
+        {
+          title: "标题1",
+        },
+        {
+          title: "标题2",
+        },
+        {
+          title: "标题3",
+        },
+      ];
+
+      function template() {
+        return `
+          <ul>
+            ${array.map((item) => "<li>" + item.title + "</li>").join("")}
+          </ul>
+        `;
+      }
+
+      document.body.innerHTML = template();
+    </script>
+  </body>
+</html>

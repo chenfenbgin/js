@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let hd = [];
+      let cd = {};
+      // 数组对象类型打印的都是object
+      console.log(typeof hd, typeof cd);
+      // hd.prototype, 原型链上是不是有这个属性 :可以理解为hd是否是有这个对象构造函数实现出来的
+      console.log(hd instanceof Array, cd instanceof Array);
+
+      //举例
+      function User(){}
+      let fb = new User();
+      console.log(fb instanceof User, fb instanceof Object); //object是原型链的顶层了
+
+    </script>
+  </body>
+</html>

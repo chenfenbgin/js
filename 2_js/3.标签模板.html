@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 例子1
+      // let name = "fengxiu";
+      // let web = "baidu.com";
+      // console.log(tag`在线教程${name},网址是${web}.`);
+
+      // 例子2
+      // function tag(strings){
+      //   console.log(strings)
+      // }
+      // 将name web收集到vars中
+      // function tag(strings, ...vars){
+      //   console.log(vars);
+      //   console.log(strings)
+      // }
+
+      // 例子3
+      let lesson = [
+        {
+          title: "课程1",
+          author: "老师1",
+        },
+        {
+          title: "课程1",
+          author: "老师2",
+        },
+        {
+          title: "课程3",
+          author: "老师3",
+        },
+      ];
+      function template1() {
+        return `
+          <ul>
+            ${lesson
+              .map(
+                (item) =>
+                  links`<li>作者：${item.author}, 课程：${item.title}</li>`
+              )
+              .join("")}
+          </ul>
+        `;
+      }
+      function links(strings, ...vars) {
+        // console.log(strings);
+        console.log(vars);
+        return strings
+          .map((str, key) => {
+            return (
+              str +
+              (vars[key]
+                ? vars[key].replace(
+                    "老师1",
+                    `<a href="http://www.baidu.com">老师1</a>`
+                  )
+                : "")
+            );
+          })
+          .join("");
+      }
+
+      document.body.innerHTML += template1();
+    </script>
+  </body>
+</html>
