@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      span {
+        color: white;
+      }
+    </style>
+    <script>
+      // 例子1
+      // for (let i = 0; i < 10; i++) {
+      //   console.log(i);
+      //   for (let n = 0; n < i; n++) {
+      //     document.write("*");
+      //   }
+      //   document.write("<br/>");
+      // }
+
+      // 例子2
+      // for (let i = 0; i < 5; i++) {
+      //   for (let n = 5 - i; n > 0; n--) {
+      //     document.write(`<span>*</span>`);
+      //   }
+      //   for (let m = 2 * i - 1; m > 0; m--) {
+      //     document.write("*");
+      //   }
+
+      //   document.write("<br/>");
+      // }
+
+      // 封装成函数
+      function yh(row = 10) {
+        for (let i = 0; i < row; i++) {
+          for (let n = row - i; n > 0; n--) {
+            document.write(`<span>*</span>`);
+          }
+          for (let m = 2 * i - 1; m > 0; m--) {
+            document.write("*");
+          }
+
+          document.write("<br/>");
+        }
+      }
+
+      yh(12)
+    </script>
+  </body>
+</html>

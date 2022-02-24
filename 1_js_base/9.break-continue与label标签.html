@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // for (let i = 1; i <= 10; i++) {
+      //   if (i % 2) continue;
+      //   // console.log(i); // 2 4 6 8 10
+      // }
+
+      let count = 0;
+      for (let m = 1; m <= 10; m++) {
+        if (m % 2) {
+          if (count++ == 3) break;
+          console.log(m); // 1 3 5
+        }
+      }
+    </script>
+  </body>
+</html>
