@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" name="password" />
+    <span id="msg"></span>
+    <script>
+      //例子1：判断密码长度，去除空格进行判断
+      document
+        .querySelector('[name="password"]')
+        .addEventListener("keyup", function () {
+          // 忽略空格的长度
+          console.log(this.value.trim().length);
+          this.value = this.value.trim();
+          let err = "";
+          if (this.value.length < 5) {
+            err = "密码长度不能小于5位";
+          }
+          document.querySelector("#msg").innerHTML = err;
+          // let length = this.value.length;
+          // console.log(length)
+        });
+
+      //例子2
+      let xf = "xiufeng";
+      for (let i = 0; i < xf.length; i++) {
+        let span = document.createElement("span");
+        span.style.fontSize = (i + 1) * 10 + "px";
+        span.innerHTML = xf[i];
+        document.body.append(span);
+      }
+
+      // 例子3:字符串截取 slice substr substring
+      let cf = "chenfeng";
+      console.log(cf.slice(1));       //henfeng
+      console.log(cf.substr(1));      //henfeng
+      console.log(cf.substring(1));   //henfeng
+
+      console.log(cf.slice(1, 3));    //he
+      console.log(cf.substring(1, 3));//he
+      console.log(cf.substr(1, 3));   //hen
+
+      console.log(cf.slice(-3));       //eng
+      console.log(cf.substr(-3));      //eng
+      console.log(cf.substring(-3));   //chenfeng
+    </script>
+  </body>
+</html>
