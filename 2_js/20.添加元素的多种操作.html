@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // 方式一
+    let arr = ["zhangsan", "lisi"];
+    arr[arr.length] = "wangwu";
+    arr[arr.length] = "zhaoliu";
+    console.table(arr);
+
+    // 方式二：push
+    let arr1 = ["zhangsan", "lisi"];
+    let arr2 = ["wangwu", "zhaoliu"];
+    arr1.push(...arr2);
+    // 下面这种操作也是可以的
+    let length = arr1.push("panqi", ...arr1);
+    console.table(arr1);
+
+    // 例子：生成随机的数组
+    function rangeArray(begin, end) {
+      const array = [];
+      for (let i = begin; i < end; i++) {
+        array.push(i);
+      }
+      return array;
+    }
+    console.table(rangeArray(1, 10));
+  </script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let arr = ["chen", 2022];
+    let [name, year] = arr;
+    console.log(name, year);
+
+    let [name1, ...args] = ['chen', 'xiu', 2222]
+    console.log(args);
+
+    let a = ['chen', 'xiu', 2222]
+    console.log(a);
+
+    // 默认值
+    let [name3, year2= 222] = ['chen']
+    console.log(year2);
+  </script>
+</html>

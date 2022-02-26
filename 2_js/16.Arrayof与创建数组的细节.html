@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>chenfeng</div>
+    <div>chenixu</div>
+    <script>
+      const hd = ["chenfeng"];
+      hd[3] = "xiu";
+      console.log(hd.length); // 4
+      console.log(hd[2]); // undefined
+      console.log(hd); //['chenfeng', empty × 2, 'xiu']
+
+      let cmd = new Array(6);
+      console.log(cmd.length); //6
+
+      let cmd2 = Array.of(6); // 6
+      console.log(cmd2.length); // 1
+
+      //检测标量是否为数组
+      console.log(Array.isArray([]));
+
+      //拆分数组
+      let str = "chen";
+      console.log(str.split(""));
+      console.log(Array.from(str));
+
+      let divs = document.querySelectorAll("div");
+      console.log(divs);
+      // 迭代数组里面的元素，我们改变元素，可以使用第二个参数
+      console.log(
+        Array.from(divs, function (item) {
+          console.log(item.innerHTML);
+          item.style.backgroundColor = "red";
+          return item;
+        })
+      );
+    </script>
+  </body>
+</html>

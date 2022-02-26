@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 把数组第几个元素移动到第几个去
+      function move(array, from, to) {
+        if (from < 0 || to >= array.length) {
+          console.log("参数错误");
+          // 终止执行
+          return;
+        }
+        const newarr = [...array];
+        let item = newarr.splice(from, 1);
+        console.log(item);
+        newarr.splice(to, 0, ...item);
+        return newarr;
+      }
+      let array = [1, 2, 3, 4, 5];
+      console.log(array);
+      console.log(move(array, 1, 3));
+    </script>
+  </body>
+</html>
