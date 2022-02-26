@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 标准写法
+      const boolean = new Boolean(true);
+      console.log(typeof boolean); //object
+      console.log(boolean.valueOf()); //true
+
+      if (boolean.valueOf()) {
+        console.log("chen.com");
+      }
+
+      let number = 33;
+      console.log("Boolean(number)", Boolean(number));
+      if (number) console.log(number); //33
+
+      // false: 0       true: 1
+      console.log(number == true); //false
+      console.log(number == false); //false
+
+      let array = [];
+      console.log(Number(array));
+      console.log(array == false); //true
+      console.log("Boolean([])", Boolean([]));
+      // 因为引用类型， 跟上面的比较是有区别的。{}也会执行
+      if ([]) console.log("执行");
+
+      //总结：  数值类型：除了0之外都是true
+      //       字符类型：除了空字符串外都为真；引用类型数组跟对象都为真
+      console.log("-------------");
+
+      //显示转成Boolean类型
+      // 方式1
+      let number2 = 0;
+      console.log(typeof number);
+      // !： 取反，其实他完成的是两步：第一步是转成Boolean类型，然后把真变为假，或者把假变为真
+      // number2 = !!number2 ; 就是把true变成false了
+      number2 = !number2;
+      console.log(number2);
+
+      // 方式2：使用构造函数
+      console.log(Boolean(number2));
+
+      let array2 = []; // {}、Date()都是如此
+      console.log(Boolean(array2));
+      console.log(!![]);
+    </script>
+    11111
+  </body>
+</html>

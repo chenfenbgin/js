@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const string = "9";
+      console.log(typeof string);
+      // 让字符参与运算，隐式方式
+      console.log(string * 1 + 78);
+
+      //Number构造函数
+      console.log(Number(string) + 78);
+
+      // parseInt()
+      const string2 = "22chen";
+      console.log(parseInt(string2)); //22
+
+      // split()
+      const chen = "chen";
+      console.log(chen.split("")); //  ['c', 'h', 'e', 'n']
+
+      // join()
+      const chenarray = ["c", "h", "e", "n"];
+      console.log(chenarray.join("")); //chen
+
+      const array = ["c", "h", "e", "n"];
+      console.log(array.toString()); //c,h,e,n
+
+      const number = 99;
+      const newNumber = number.toString();
+      console.log(newNumber + 70); //9970
+    </script>
+  </body>
+</html>
