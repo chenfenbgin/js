@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //自定义filter函数
+    let hd = [1, 2, 3, 4, 5];
+    // 方式一：
+    function filter(array, expected) {
+      let newArray = [];
+      for (const value of array) {
+        if (expected.includes(value) === false) {
+          newArray.push(value);
+        }
+      }
+      return newArray;
+    }
+    console.log(filter(hd, [1, 3, 2]));
+
+    // 方式二：callback()改造
+    function filter2(array, callback) {
+      let newArray = [];
+      for (const value of array) {
+        if (callback(value) === true) {
+          newArray.push(value);
+        }
+      }
+      return newArray;
+    }
+    console.log(
+      filter2(hd, function (value) {
+        return value > 2;
+      })
+    );
+  </script>
+</html>

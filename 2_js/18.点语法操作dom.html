@@ -27,7 +27,7 @@
     // 方式三： 点语法, 点击元素消失
     [...div].map((item) => {
       console.log(item);
-      item.addEventListener("click", function() {
+      item.addEventListener("click", function () {
         this.classList.toggle("hide");
       });
     });

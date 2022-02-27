@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let arr = ["chen", "xiu"];
+    let hd = arr.map(function (value, index, arr) {
+      // return 1 ;返回什么，新数组就是什么
+      // return value;
+      // 改变value再返回
+      return `前端 - ${value}`;
+    });
+    console.log(hd);
+    // 原数组没有改变，因为是值类型。
+    console.log(arr);
+
+    // 对象类型
+    const stus = [
+      { name: "zhangsan", js: 90 },
+      { name: "lisi", js: 59 },
+      { name: "wangwu", js: 94 },
+    ];
+    // 原数组被改变，会把原来的值赋值给value,但是他是复制的是内存地址
+    stus.map(function (value) {
+      value.click = 100;
+    });
+    console.table(stus);
+
+    //如果想要新数组，可以使用assign
+    let newarr = stus.map(function (value) {
+      return Object.assign({ click: 100 }, value);
+      // 或者这么操作
+      // return {
+      //   name: value.name,
+      //   js: value.js,
+      //   click: 100
+      // }
+    });
+    console.table(newarr);
+    console.table(stus);
+  </script>
+</html>

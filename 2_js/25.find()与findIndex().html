@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let lessons = [{ name: "js" }, { name: "css" }, { name: "java" }];
+    console.log(lessons.includes({ name: "css" })); //false。引用类型是找不到的。内存地址不一样、
+
+    // 我们可以使用find。查找引用类型
+    let status = lessons.find(function (item) {
+      return item.name == "css";
+    });
+    console.log(status);
+
+    let index = lessons.findIndex(function (item) {
+      return item.name == "css";
+    });
+    console.log(index);
+
+    console.log('==================');
+    // 自定义find()函数
+    let array = [1, 2, 3, 4, 5, 6];
+    function find(array, callback) {
+      for (const value of array) {
+        if (callback(value)) {
+          return value;
+        }
+      }
+      return undefined;
+    }
+    console.log(find(array, function (item) { return item == 33}));
+  </script>
+</html>

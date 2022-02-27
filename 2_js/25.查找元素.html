@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let arr = [1, 2, 3, 4, 5, "9"];
+    console.log(arr.indexOf(-2));
+    // 严格类型匹配,查不到9的
+    console.log(arr.indexOf(9));
+
+    // 可以使用include()方法
+    console.log(arr.includes(3)); // true
+
+    // include()方法实现原理简单实现
+    function includes(array, target) {
+      for (const value of array) {
+        if (value === target) return true;
+      }
+      return false;
+    }
+    console.log(includes(arr, "9"));
+  </script>
+</html>

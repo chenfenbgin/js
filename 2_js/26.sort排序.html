@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // let arr = [1,2]
+    // let arr = [1, 3, 2, 6, 5, 0];
+    // arr = arr.sort(function (a, b) {
+    //   // -1 从小到大    1 正数 从大到小
+    //   return a - b;
+    // });
+    // console.table(arr);
+
+    // sort实现原理
+    let array = [1, 3, 2, 6, 5, 0];
+    function sort(array, callback) {
+      for (const n in array) {
+        for (const m in array) {
+          // 升序
+          if (callback(array[n], array[m]) < 0) {
+            const temp = array[n];
+            array[n] = array[m];
+            array[m] = temp;
+          }
+        }
+      }
+      return array;
+    }
+    console.log(
+      (array = sort(array, function (a, b) {
+        return a - b;
+      }))
+    );
+  </script>
+</html>

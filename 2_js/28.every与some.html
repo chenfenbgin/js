@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" name="title" />
+    <span></span>
+  </body>
+  <script>
+    let arr = ["chen", "xiu"];
+    let status = arr.every(function (value, index, arr) {
+      console.log(value, index, arr);
+      return true;
+    });
+
+    // 例子： 判断所有学生是否都及格
+    const stus = [
+      { name: "zhangsan", js: 90 },
+      { name: "lisi", js: 59 },
+      { name: "wangwu", js: 94 },
+    ];
+    // 必须全部为真
+    const res = stus.every(function (item, index, stus) {
+      return item.js >= 60;
+    });
+    console.log(res);
+    console.log(res ? "全都及格" : "有同学不及格");
+
+    // some()如果有一个为真，表达式就返回真
+    let some = stus.some(function (item, index, stus) {
+      console.log(item);
+      return true;
+    });
+    console.log(some ? "全都及格" : "有同学不及格");
+
+    // 简单例子： 输入的标题要求包含关键词
+    let keywords = ["php", "json"];
+    let title = document.querySelector('[name="title"]');
+    title.addEventListener("keyup", function () {
+      const res = keywords.some((item) => {
+        if (this.value.indexOf(item) != -1) {
+          console.log("包含关键词:", item);
+          return true;
+        }
+      });
+      if (res === false) {
+        document.querySelector("span").innerHTML = "没包含js与php关键字";
+      } else {
+        document.querySelector("span").innerHTML = "";
+      }
+    });
+  </script>
+</html>

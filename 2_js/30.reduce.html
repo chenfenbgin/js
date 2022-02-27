@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let arr = [1, 2, 3, 4, 5];
+    arr.reduce(function (pre, value, index, arr) {
+      // 第一次就是1，第二次就是返回值。调了4次
+      // 1 2
+      // undefined 3
+      // undefined 4
+      // undefined 5
+      console.log(pre, value);
+    });
+
+    arr.reduce(function (pre, value, index, arr) {
+      // 调了5次
+      //  0 1
+      //  undefined 2
+      //  undefined 3
+      //  undefined 4
+      //  undefined 5
+      console.log(pre, value);
+    }, 0);
+
+    console.log("--------------");
+    // 例子1： 统计元素出现的次数
+    let arr2 = [1, 2, 3, 1, 1];
+    function arrayCount(array, item) {
+      return array.reduce(function (total, cur) {
+        total += item == cur ? 1 : 0;
+        return total;
+      });
+    }
+    console.log(arrayCount(arr2, 1));
+
+    console.log("===========");
+    // 例子2
+    let arr3 = [1, 2, 3, 15, 13];
+    function arrayMax(array) {
+      // 第一次的时候： pre:1  value: 2
+      return array.reduce(function (pre, cur) {
+        return pre > cur ? pre : cur;
+      }, 0);
+    }
+    console.log(arrayMax(arr3));
+  </script>
+</html>
