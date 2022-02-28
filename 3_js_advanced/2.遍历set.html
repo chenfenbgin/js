@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let set = new Set(["chen", "xiushao"]);
+    // 遍历set， 方式一： foreach
+    set.forEach(function (value, key, set) {
+      console.log(value, key, set);
+    });
+
+    // 方式二 :for of
+    for (const value of set) {
+      console.log(value);
+    }
+  </script>
+</html>

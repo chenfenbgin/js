@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 例子1：获取价格超过1万元商品的名称
+      let cart = [
+        { name: "iphone", price: 12000 },
+        { name: "imac", price: 55000 },
+        { name: "ipad", price: 2000 },
+      ];
+      // 获取超过1万元的商品
+      function getNameByPrice(cart, price) {
+        return cart
+          .reduce(function (arr, cur) {
+            if (cur.price > price) {
+              arr.push(cur);
+            }
+            return arr;
+          }, [])
+          .map(function (item) {
+            return item.name;
+          });
+      }
+      console.log(getNameByPrice(cart, 10000)); // ['iphone', 'imac']
+
+      // 例子2：去除重复元素
+      let arr = [1, 3, 4, 5, 4, 6, 5, 5, 6];
+      let newarr = arr.reduce(function (arr, cur) {
+        if (arr.includes(cur) === false) {
+          arr.push(cur);
+        }
+        return arr;
+      }, []);
+      console.log(newarr);
+
+      // 例子3：去除重复的商品
+      let cart2 = [
+        { name: "iphone", price: 12000 },
+        { name: "iphone", price: 12000 },
+        { name: "imac", price: 55000 },
+        { name: "ipad", price: 2000 },
+        { name: "ipad", price: 2000 },
+      ];
+      function filterGoods(goods) {
+        return goods.reduce(function (arr, cur) {
+          let find = arr.find(function (v) {
+            return v.name === cur.name;
+          });
+          if (!find) arr.push(cur);
+          return arr;
+        }, []);
+      }
+      console.table(filterGoods(cart2));
+    </script>
+  </body>
+</html>

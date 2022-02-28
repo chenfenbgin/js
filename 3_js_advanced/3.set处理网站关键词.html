@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* body {
+        padding: 80px;
+      } */
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 200px;
+      }
+      li {
+        border: solid 1px darkblue;
+        padding: 10px;
+      }
+      li:nth-of-type(odd) {
+        background: yellowgreen;
+      }
+    </style>
+  </head>
+
+  <body>
+    <input type="text" name="chen" />
+    <ul></ul>
+  </body>
+  <script>
+    let obj = {
+      data: new Set(),
+      set keyWord(word) {
+        // 搜索的关键词压到set里面
+        this.data.add(word);
+      },
+      show() {
+        let ul = document.querySelector("ul");
+        ul.innerHTML = "";
+        this.data.forEach(function (value) {
+          ul.innerHTML += `<li>${value}</li>`;
+        });
+      },
+    };
+    let input = document.querySelector("[name='chen']");
+    input.addEventListener("blur", function () {
+      obj.keyWord = this.value;
+      obj.show();
+    });
+  </script>
+</html>

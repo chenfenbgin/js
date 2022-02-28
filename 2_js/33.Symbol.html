@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let a = Symbol();
+    let b = Symbol();
+    console.log(a == b);
+
+    // 例子
+    let user1 =  '张三'
+    let user2 =  '张三'
+    let grade = {
+      张三: { js: 100, css: 89 },
+      张三: { js: 60, css: 59 },
+    };
+    console.log(grade);   //打印  张三: {js: 60, css: 59}
+
+    let grade1 = {
+      user1: { js: 100, css: 89 },
+      user2: { js: 60, css: 59 },
+    };
+    console.log(grade1);  //user1: {js: 100, css: 89} user2: {js: 60, css: 59}
+    //如果想要到张三，要使用[]
+    let grade2 = {
+      [user1]: { js: 100, css: 89 },
+      [user2]: { js: 60, css: 59 },
+    };
+    console.log(grade2); //张三: {js: 60, css: 59}
+
+
+    let user3 = {
+      name: '张三',
+      key: Symbol()
+    } 
+    let user4 = {
+      name: '张三',
+      key: Symbol()
+    } 
+    let grade3 = {
+      [user3.key]: { js: 100, css: 89 },
+      [user4.key]: { js: 60, css: 59 },
+    };
+    console.log('----', grade3);
+  </script>
+</html>
