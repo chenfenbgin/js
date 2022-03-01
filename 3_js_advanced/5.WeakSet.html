@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>chen.com <a href="http://chen.com">x</a></li>
+      <li>chenxiu.com <a href="http://chenxiu.com">x</a></li>
+      <li>xiu.com <a href="http://xiu.com">x</a></li>
+    </ul>
+  </body>
+  <script>
+    class Todo {
+      constructor() {
+        this.items = document.querySelectorAll("ul>li");
+        // console.log(this.items);
+        this.lists = new WeakSet();
+        this.items.forEach(item =>  this.lists.add(item));
+        // console.log(this.lists);
+      }
+
+      run(){
+        this.addEvent();
+      }
+      addEvent(){
+        this.items.forEach(item => {
+          let a = item.querySelector("a");
+          console.log(a);
+          a.addEventListener("click", event => {
+            const parentElement = event.target.parentElement;
+            if(this.lists.has(parentElement)){
+              parentElement.classList.add("remove")
+              this.lists.remove(parentElement)
+            }else{
+              alert('已经删除')
+            }
+          })
+        })
+      }
+    }
+    new Todo().run();
+  </script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // 对象中键是字符串
+    let obj = {
+      // 1: "chen.com",
+      // '1': "chen.com",
+      name: "chen.com",
+    };
+    console.log(obj); //{1: 'chen.com'}
+
+    // let hd = {
+    //   obj: "haha.com"
+    // }
+    // console.log(hd); // {obj: 'haha.com'}
+    //如果想把对象的键作为键名，需要使用[], 如下
+    let hd = {
+      [obj]: "haha.com",
+    };
+    console.log(hd); //{[object Object]: 'haha.com'}
+    console.log(hd["[object Object]"]);
+    console.log(hd[obj.toString()]);
+    //发现键名是object, 在取它的值的时候，使用 console.log(hd['[object Object]'])
+
+    //Map
+    let map = new Map();
+    map.set("name", "后盾人");
+    console.log(map); //Map(1) {'name' => '后盾人'}
+    map.set(function () {}, "chen");
+    map.set({}, "chenxiu");
+    map.set(1, "sina.com.cn");
+    console.log(map);
+    // 0: {"name" => "后盾人"}
+    // key: "name"
+    // value: "后盾人"
+    // 1: {function () {} => "chen"}
+    // key: ƒ ()
+    // value: "chen"
+    // 2: {Object => "chenxiu"}
+    // key: {}
+    // value: "chenxiu"
+    // 3: {1 => "sina.com.cn"}
+    // key: 1
+    // value: "sina.com.cn"
+
+    let map1 = new Map([['lesson', 'css'], ['lesson1', 'js']]);
+    console.log(map1);  //{'lesson' => 'css', 'lesson1' => 'js'} lesson是键，css是值 
+    //map 可以链式编程
+    map.set('name', 'sina').set('name1', 'chen')
+    console.log(map);
+
+  </script>
+</html>

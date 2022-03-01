@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let obj = {
+      name: "chen",
+    };
+
+    let map = new Map();
+    map.set(obj, "chenxiu.com");
+    // 通过键拿到值
+    console.log(map.get(obj));
+    // 删除, 返回true 、false
+    console.log(map.delete("abc")); //false
+    console.log(map.delete(obj)); //true
+    console.log(map); //{}
+    //检测是否存在
+    console.log(map.has(obj));
+
+    //遍历map
+    let hd = new Map([
+      ["name", "小明"],
+      ["age", "12"],
+      ["addredd", "背景"],
+    ]);
+    console.log(hd.keys());
+    console.log(hd.values());
+    console.log(hd.entries());
+</script>
+</html>
