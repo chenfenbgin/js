@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // let map = new WeakMap();
+    // map.set("chen", "age") //报错， key必须是对象；跟WeakSet一样，值必须是对象
+
+    let arr = []; 
+    let map = new WeakMap();
+    map.set(arr, "chen.com");
+    console.log(map);
+    console.log(map.delete(arr));  //删除
+    console.log(map.has(arr))    //判断
+    // WeakMap是不可迭代的
+    for (const iterator of map) {
+      console.log(iterator);  //报错
+    }
+  </script>
+</html>

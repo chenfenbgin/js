@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = new Map([
+      ["name", "chen"],
+      ["age", "34"],
+    ]);
+    console.log(hd);
+    // 转换成数组, 键值对
+    console.log([...hd]);
+    // 单独转换键
+    console.log([...hd.keys()]);
+    console.log([...hd.values()]);
+    // 使用for of 其实就是使用[...hd.entries()]
+
+    console.log('=============');
+    // 过滤出chen的数据
+    let arr = [...hd].filter(item => {
+      console.log(item);
+      return item[1].includes('chen')
+    })
+    console.log(arr);
+    let array = new Map(arr);
+    console.log(array);
+</script>
+</html>

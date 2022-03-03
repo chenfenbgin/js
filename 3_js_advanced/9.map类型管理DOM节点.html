@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div name="陈秀">chen.com</div>
+    <div name="管理系统">xiu.com</div>
+  </body>
+  <script>
+    let map = new Map();
+    document.querySelectorAll("div").forEach((item) => {
+      console.log(item, item.getAttribute("name"));
+      // 用key保存原有DOM对象，用value来保存附加的数据
+      map.set(item, {
+        content: item.getAttribute("name"),
+      });
+    });
+    console.log(map);
+
+    map.forEach((config, element) => {
+      console.log(config, element);
+      element.addEventListener("click", () => {
+        alert(config.content);
+      });
+    });
+  </script>
+</html>

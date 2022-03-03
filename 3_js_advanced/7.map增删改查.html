@@ -27,10 +27,17 @@
     let hd = new Map([
       ["name", "小明"],
       ["age", "12"],
-      ["addredd", "背景"],
+      ["addredd", "北京"],
     ]);
     console.log(hd.keys());
     console.log(hd.values());
     console.log(hd.entries());
+    for(const [key, value] of hd.entries()) {
+      console.log(key, value);
+    }
+
+    hd.forEach((value,key) =>{
+      console.log(value,key);
+    });
 </script>
 </html>
