@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // 不建议这么声明
+    function hd(){
+      console.log("object");
+    }
+    window.hd();  //window调用也可以执行，默认被压入window中了
+    console.log(window);
+
+    var cms = function(){
+      console.log('chen.Compatible');
+    }
+    window.cms(); //可以调用，但是如果改成let cms，是无法调用的.应该用cms直接调用
+  
+    //定义的函数覆盖掉了window中的函数；可以使用模块的方式
+    function screenX(){
+      console.log("后端");
+    }
+    console.log(window.screenX);
+  </script>
+</html>

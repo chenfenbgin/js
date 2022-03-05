@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function avg(total, year = 2) {
+      // year = year || 1;//也做到了默认参数的形式
+      console.log(year);
+      return Math.round(total / year);
+    }
+    console.log(avg(2000));
+
+    // 例子1： 排序 //注意： 默认参数一定要放在后面
+    function sortArray(array, type = "asc") {
+      return array.sort(function (a, b) {
+        return type == "asc" ? a - b : b - a;
+      });
+    }
+    console.log(sortArray([23,4,45,6,1], 'desc'));
+
+    
+  </script>
+</html>

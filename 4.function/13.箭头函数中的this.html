@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <botton>天选之子</botton>
+  </body>
+  <script>
+    let Dom = {
+      site: "陈秀",
+      bind: function () {
+        const button = document.querySelector("botton");
+        // // 方式一：
+        button.addEventListener("click", (event) => {
+          console.log(this); //{site: '陈秀', bind: ƒ}
+          console.log(event.target); //<botton>天选之子</botton>
+          console.log(this.site + event.target.innerHTML);
+        });
+
+        console.log("============");
+        // 方式二：
+        const self = this;
+        button.addEventListener("click", function () {
+          console.log(self.site + this.innerHTML);
+        });
+      },
+    };
+    Dom.bind();
+  </script>
+</html>

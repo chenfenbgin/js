@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <botton>天选之子</botton>
+  </body>
+  <script>
+    let lesson = {
+      site: "李四",
+      lists: ["js", "css", "mysql"],
+      // 使用箭头函数的方式
+      show: function () {
+        return this.lists.map((value) => {
+          console.log(this);
+          //this直向的是lesson，可以理解为箭头函数中的this指向的是上下文，即指向的是父级作用域中的this
+          return `${this.site}-${value}`;
+        });
+      },
+    };
+    console.log(lesson.show());
+    console.log("============");
+
+    let Dom = {
+      site: "陈秀",
+      bind: function () {
+        const button = document.querySelector("botton");
+        console.log(button); //<botton>天选之子</botton>
+        // button.onclick = function () {
+        //   console.log(this); //这个函数是这个对象属性的值，所有this就是这个对象<botton>天选之子</botton>
+        // };
+
+        button.addEventListener("click", () => {
+          console.log(this);  //{site: '陈秀', bind: ƒ}
+          //箭头函数，this就是上下文,会变到父级作用域中的this。父级作用域是bind: function()是一个函数，函数是这个属性的值，所以this就是Dom这个对象
+          console.log(this.site);
+        })
+      },
+    };
+    Dom.bind();
+  </script>
+</html>

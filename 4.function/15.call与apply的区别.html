@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>chen</button>
+    <button>xiu.com</button>
+  </body>
+  <script>
+    //call apply,
+    let lisi = {
+      name: "李四",
+    };
+    let wangwu = {
+      name: "王五",
+    };
+
+    // function User(name) {
+    //   console.log(this.name);
+    // }
+    // // 第一个参数是传递一个对象, 传递给了this，改变了this指针，立刻执行这个函数
+    // User.call(lisi);
+    // User.call(lisi);
+
+    // call与apply的区别在于参数上
+    function User(web, url) {
+      console.log(web + url + this.name);
+    }
+    User.call(lisi, "陈秀", "chenxiu.com");
+    User.call(lisi, ["陈秀", "chenxiu.com"]);
+
+    console.log("=============");
+    // 例子1：点击按钮，拿到内容
+    function show() {
+      alert(this.innerHTML); //this指向的是window
+    }
+    let buttons = document.querySelectorAll("button");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener("click", (event) => {
+        show.call(event.target); //event.target指向的是按钮
+        //我们使用call/apply 将show()中的this指向改变
+      });
+    }
+
+    // 例子2:获取最大值, Max这个函数只能是多个参数进行传递
+    console.log(Math.max(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+    // 如果传递的是数组， 方式一：我们需要进行展开
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    console.log(Math.max(...arr));
+    //方式二：
+    console.log(Math.max.apply(Math, arr));
+</script>
+</html>

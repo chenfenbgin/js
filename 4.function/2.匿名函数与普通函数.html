@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = function () {
+      console.log("chenxiu");
+    };
+    hd();
+
+    show(); //放到前面，按道理会报错；其实是函数提升了
+    function show() {
+      console.log("chen");
+    }
+
+    //函数是对象，引用类型地址的指针传递
+    let cms = hd;
+    cms(); // 我们可以使用cms()调用
+
+    // 例子:求和函数
+    function sum(...args) {
+      return args.reduce((a, b) => {
+        return a + b;
+      });
+    }
+    console.log(sum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+  </script>
+</html>

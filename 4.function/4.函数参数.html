@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function hd(a) {
+      return a <= 3;
+    }
+    // 之前我们采用的四匿名函数的方式
+    // let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].filter(function (item) {
+    //   return item <= 3;
+    // });
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].filter(hd);
+    console.log(arr);
+
+    // 定时也是
+    let i = 0;
+    // setInterval(() => {
+    //   console.log(++i);
+    // }, 1000)
+    function cms() {
+      // console.log(++i);
+    }
+    setInterval(cms, 1000);
+
+    // 求和
+    function sum(...args) {
+      // 传递的参数可以使用arguments接受
+      console.log(arguments); //Arguments(10) [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, callee: (...), Symbol(Symbol.iterator): ƒ]
+      // 方式一： 我们遍历他
+      let total = 0;
+      // for (const item of arguments) {
+      //   // console.log(item);
+      //   total += item;
+      // }
+      // return total;
+
+      // 方式二： 我们也可以使用数组的特性; 我们需要将 arguments转成数组形式
+      // return [...arguments].reduce(function (pre, value) {
+      //   return pre + value;
+      // }, 0);
+
+      // 方式三： ...args，点语法，接受过来的，就是一个真的数组
+      console.log(args); //(10) [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      return args.reduce((a, b) => a + b)
+    }
+    console.log(sum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+  </script>
+</html>
