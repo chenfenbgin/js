@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>天选之子</button>
+  </body>
+  <script>
+    //bind call
+    function show() {
+      console.log(this.name);
+    }
+    //show.apply({name: '天选之子'}) //这是会立即执行的，但是bind不会，需要加上()
+    show.bind({ name: "陈秀" })();
+
+    let a = function () {};
+    let b = a; //传址
+    console.log(a instanceof Object); //true， 函数是对象类型
+    console.log(a === b); //true
+    //使用bind，就不相等了
+    b = a.bind();
+    console.log(a === b); //false
+
+    console.log("----------------");
+    //例子
+    function hd(a, b) {
+      console.log(a, b);
+      return this.f + a + b;
+    }
+    console.log(hd.call({ f: 1 }, 2, 3)); //输出6
+    //如果改成bind,是不会立即执行的; 返回一个新的函数
+    console.log(hd.bind({ f: 1 }, 2, 3));
+    let func = hd.bind({ f: 1 }, 2, 3); //如果这里先传了，下面是没有作用的
+    func(2, 3);
+
+    // 例子2：
+    document.querySelector("button").addEventListener(
+      "click",
+      function (event) {
+        document.write(this.url + event.target.innerHTML);
+      }.bind({ url: "tianxuanzhizi.com" })
+    );
+  </script>
+</html>

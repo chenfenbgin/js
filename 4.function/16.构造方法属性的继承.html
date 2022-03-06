@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function Article() {
+      this.url = "artilce/lists";
+      this.get = function (params) {
+        console.log(Object.keys(params));
+        let str = Object.keys(params)
+          .map((k) => `${k}=${params[k]}`)
+          .join("&");
+        console.log(`${this.url}/${str}`);
+        let url = `http://chenxiu.com?${this.url}/${str}`;
+      };
+    }
+
+    let a = new Article();
+    console.log(a.get({ id: 1, cat: "js" }));
+  </script>
+</html>

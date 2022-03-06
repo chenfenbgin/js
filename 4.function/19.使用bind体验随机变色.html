@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>tianxuanzhizi</h1>
+    tianxuanzhizi.com
+  </body>
+  <script>
+    function Color(elem) {
+      this.elem = elem;
+      this.colors = ["#1abc9c", "#f1c40f", "#8e44ad"];
+      // 随机取颜色函数
+      this.run = function () {
+        setInterval(
+          function () {
+            console.log(this); //window. 我们可以使用bind, 这样， 就是 colors对象了
+            let i = Math.floor(Math.random() * this.colors.length);
+            console.log(i);
+            // 当然，我们也可以取到传递过来的document.body
+            this.elem.style.backgroundColor = this.colors[i];
+          }.bind(this),
+          1000
+        );
+      };
+    }
+    let obj = new Color(document.body);
+    obj.run();
+    let obj1 = new Color(document.querySelector('h1'));
+    obj1.run();
+  </script>
+</html>
