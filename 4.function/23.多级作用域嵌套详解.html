@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // 情况1： let
+    let arr = [];
+    // for (let i = 0; i <= 3; i++) {
+    //   arr.push(function () {
+    //     return i;
+    //   });
+    // }
+    // console.log(arr[0]); //arr长度为3，元素都是函数； 作用域都被保存下来。包括i
+    // // 我们执行一下函数
+    // console.log(arr[0]()); // 0 这样，我们就可以保留i了
+
+    console.log("===========");
+    // 情况2： var,但是打印出来的i，是没有在函数作用域中的
+    // 如果换成var, 那么i是保留在window中的
+    // for (var i = 0; i <= 3; i++) {
+    //   arr.push(function () {
+    //     return i;
+    //   });
+    // }
+    // console.log(arr[0]()); //执行这个函数，不管是arr[1]/[2]，都是打印4
+
+    console.log("-----------");
+    //情况3：使用var，想要保留函数中的i ，可以在包一层作用域
+    for (var i = 0; i <= 3; i++) {
+      (function (i) {
+        arr.push(function () {
+          return i;
+        });
+      })(i);
+    }
+    console.log(arr[1]()); //执行这个函数，不管是arr[1]/[2]，都是打印4
+  </script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // 最后退出循环，i= 4
+    // for (var i = 0; i <= 3; i++) {
+    //   console.log(i); // 1 2 3
+    // }
+    // console.log(i); // 4
+
+
+    // let的作用域就是：for
+    for (let i = 0; i <= 3; i++) {
+      console.log(i); // 1 2 3
+    }
+    console.log(i); // 报错，使用let，是找不到i的，有块作用域
+  </script>
+</html>
