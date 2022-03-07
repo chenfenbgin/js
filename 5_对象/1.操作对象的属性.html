@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let user = {
+      name: "天选之子",
+      "my age": 12, //这种形式我们需要使用[]读取，
+    };
+    console.log(user.name);
+    // 使用中括号，里面要是字符的形式
+    console.log(user["name"]);
+    console.log(user["my age"]);
+
+    // for
+    for (const key in user) {
+      // console.log(user.key);  //打印出来的是undefined
+      console.log(user[key]); // 天选之子 12
+    }
+
+    // 设置属性
+    user.age = 18;
+    user.get = function () {
+      return `${this.name}的年龄是${this.age}`;
+    };
+    console.log(user.get()); //19
+    delete user.age; //删除属性
+    console.log(user.get()); //undefined
+  </script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // 案例1
+    // let hd = {
+    //   user: "天选之子",
+    //   get: function () {
+    //     // this 是hd这个对象
+    //     console.log(this); //{user: '天选之子', get: ƒ}
+    //     return this.user;
+    //   },
+    // };
+    // console.log(hd.get());
+
+    // 案例2
+    // let hd = {
+    //   user: "天选之子",
+    //   get: function () {
+    //     return function () {
+    //       return this.user;
+    //     };
+    //   },
+    // };
+    // console.log(hd.get()());
+    // // 等价于下面两行代码
+    // let a = hd.get();
+    // // 我们得到a这个函数，a()我们执行这个函数，当前a所在this是window，所以打印出来的是undefined
+    // console.log(a()); //this指针特殊，指向的是当前调用函数的对象；我们当前在全局中调用，所以指向的是window
+
+    // 案例3：解决案例2的问题，我们需要拿到this.user; 当然，直接使用箭头函数是最简单的
+    let hd = {
+      user: "天选之子",
+      get: function () {
+        // let This = this;
+        // return function () {
+        //   return This.user;
+        // };
+        // 等价于上面的写法：
+        return () => {
+          return this.user;
+        };
+      },
+    };
+    console.log(hd.get()());
+    let a = hd.get();
+    console.log(a());
+  </script>
+</html>
