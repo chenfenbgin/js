@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let user = {
+      name: "张三",
+      age: 23,
+    };
+    console.log(user);
+    const { name, age } = user;
+    console.log(age);
+
+    // 只要是对象，就能解构
+    function hd() {
+      return { name: "李四", age: 22 };
+    }
+    // 左边是元数据：右边是要赋值的变量
+    let { name: name1, age: age1 } = hd();
+    console.log(name1, age1);
+
+    // 数组的解构
+    let arr = ["王五", "张三"];
+    let [, b] = arr;
+    console.log(b);
+
+    // 变量变成属性,不用都不全的
+    let name2 = "炸熘",
+      age2 = 25;
+    let opt = { name2, age2 };
+    console.log(opt); //{name2: '炸熘', age2: 25}
+
+    // 多层对象的解构
+    let c = {
+      name: '尘世',
+      lesson : {
+        title: 'js/css'
+      }
+    }
+    let { name: name3, lesson: {title}} = c
+    console.log(name3, title);
+  </script>
+</html>
