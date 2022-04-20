@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // 数组
+    function cd([name, age]) {
+      console.log(name, age);
+    }
+
+    cd(["陈世美", 0]);
+
+    // 对象
+    function cd2({ name, age }) {
+      console.log(name, age);
+    }
+    cd2({ name: "陈世美", age: 0 });
+
+    // 也可以部分使用解构特性
+    function hd(name, { sex, age }) {
+      console.log(name, sex, age);
+    }
+    hd("陈世美", { sex: "male", age: 23 });
+  </script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // const user = {
+    //   // name: "陈世美",
+    //   data: { name },
+    //   age: 23,
+    //   set name(value) {
+    //     // console.log(value + "-天选之子");
+    //     this.data.name = value;
+    //   },
+    //   get name() {
+    //     return this.data.name;
+    //   },
+    // };
+    // user.name = "胖了";
+    // user.data.name = "你好"
+    // console.log(user);
+
+    // 如果data里面的数据不想被改变,可以使用Symbol
+    const DATA = Symbol();
+    const user = {
+      [DATA]: { name },
+      age: 23,
+      set name(value) {
+        this[DATA] = value;
+      },
+      get name() {
+        return this[DATA].name;
+      },
+    };
+    user.name = "胖了";
+    // user.data.name = "你好"; //报错
+    
+    console.log(user);
+  </script>
+</html>

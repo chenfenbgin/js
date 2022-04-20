@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // 处理深拷贝
+    // 方式一： 我们使用递归的方式
+    let data = {
+      name: "",
+      user: {
+        name: "小红",
+      },
+      // 如果对象里有数组
+      arr: [],
+    };
+
+    // 对于对象，数组，都有entries方式
+    let a = ["小明", "小红"];
+    let b = { name: "小明", title: "小红" };
+    console.log(JSON.stringify(Object.entries(a), null, 2));
+    console.log(JSON.stringify(Object.entries(b), null, 2));
+
+    function copy(obj) {
+      let res = obj instanceof Array ? [] : {};
+      // 我们对数组、对象进行处理
+      for (const [key, value] of Object.entries(obj)) {
+        res[key] = typeof value == "object" ? copy(value) : value;
+      }
+      return res;
+    }
+    let chenshen = copy(data);
+    chenshen.user.name = '小明'
+    chenshen.arr.push('abc')
+    console.log(JSON.stringify(chenshen, null, 2));
+    console.log(JSON.stringify(data, null, 2));
+  </script>
+</html>

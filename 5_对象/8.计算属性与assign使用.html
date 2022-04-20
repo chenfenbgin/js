@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = {};
+    let name = "title";
+    hd[name] = "陈世美";
+    console.log(hd.title);
+
+    // 把数组变成对象的形式
+    const lessons = [
+      { title: "响应式布局", category: "css" },
+      { title: "弹性盒模型", category: "css" },
+      { title: "数据库", category: "mysql" },
+    ];
+    let res = lessons.reduce((obj, cur, index) => {
+      obj[`${cur["category"]}-${index}`] = cur;
+      return obj;
+    }, {});
+    console.log(JSON.stringify(res, null, 2));
+
+    // assign 参数合并
+    function upload(params){
+      let options = { 
+        size: 3333
+      }
+      options = Object.assign(options, params);
+      console.log(JSON.stringify(options, null, 2));
+    }
+    upload({size:9999, type: "jpeg"})
+  </script>
+</html>

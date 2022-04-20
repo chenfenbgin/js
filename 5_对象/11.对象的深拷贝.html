@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //使用场景
+    let obj = {
+      name: "陈世美",
+      user: {
+        name: "js",
+      },
+    };
+    let hd = {
+      name: obj.name,
+      user: obj.user,
+    };
+    hd.user.name = "白仁鬼";
+    console.log(JSON.stringify(obj, null, 2));
+    console.log(JSON.stringify(hd, null, 2));
+    console.log("---------------------------");
+
+    // 处理深拷贝
+    // 方式一： 我们使用递归的方式
+    let data = {
+      name: "",
+      user: {
+        name: "小红",
+      },
+    };
+    function copy(object) {
+      let res = {};
+      for (const key in object) {
+        // 这个时候还是浅拷贝
+        // res[key] = object[key];
+
+        // 我们递归判断进行深拷贝
+        res[key] =
+          typeof object[key] == "object" ? copy(object[key]) : object[key];
+      }
+      return res;
+    }
+    let chenshen = copy(data);
+    chenshen.user.name = "小明";
+    console.log(JSON.stringify(chenshen, null, 2));
+    console.log(JSON.stringify(data, null, 2));
+  </script>
+</html>

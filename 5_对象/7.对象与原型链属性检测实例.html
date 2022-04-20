@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let arr = ["chen", "shen"];
+    console.log(arr.hasOwnProperty("length")); // true
+    console.log(arr.hasOwnProperty("concat")); //false，因为这个方法只检测自己，没有检测父级
+
+    // 下面这种不仅检测自己，还检测父亲
+    console.log("length" in arr); //true
+    console.log("concat" in arr); //true
+
+    // 举例
+    let a = {
+      name: "陈世美",
+    };
+    let b = {
+      url: "http://localhost",
+    };
+    // 给a设置原型
+    Object.setPrototypeOf(a, b);
+    console.log(a);
+    console.log(a.hasOwnProperty("url")); //false
+    console.log("url" in a); // true, 判断url是否在原型链当中
+  </script>
+</html>

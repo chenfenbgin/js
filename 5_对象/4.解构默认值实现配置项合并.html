@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // 解构的数组使用
+    let arr = ["chen", "yin"];
+    let [a, b, c = "div"] = arr;
+    console.log(a, b, c);
+
+    // 对象解构, 顺序跟数组不一样，前后写都是没有关系的
+    let user = { name: "chen", url: "chendiyin.com" };
+    let { name } = user; // let {url, name} = user
+    console.log(name);
+
+    //创建Dom节点
+    function createElement(options = {}) {
+      let { width = 200, height = 100, backgroundColor = "red" } = options;
+      console.log(width, height, backgroundColor);
+      const div = document.createElement("div");
+      div.style.width = width + "px";
+      div.style.height = height + "px";
+      div.style.backgroundColor = backgroundColor;
+
+      // 创建完，记得将元素添加的body里面
+      document.body.appendChild(div);
+    }
+    createElement({ width: 300, backgroundColor: "blue" });
+  </script>
+</html>

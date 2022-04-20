@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // 前提： 对象： 复制的是地址
+    let obj = {
+      name: "张三",
+      user: {
+        name: "zhangsan",
+      },
+    };
+    let hd = {
+      name: obj.name,
+      user: obj.user,
+    };
+    hd.user.name = "李四";
+    console.log(JSON.stringify(obj, null, 2));
+    console.log(JSON.stringify(hd, null, 2));
+  </script>
+</html>

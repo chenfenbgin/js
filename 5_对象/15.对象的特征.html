@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const user = {
+      name: "张三",
+      age: 23,
+    };
+    //后台的那些地址，可以使用这些属性
+
+    // {
+    //   "value": "张三",      属性的值
+    //   "writable": true,     属性是否修改
+    //   "enumerable": true,   属性是否可以遍历 Object.keys()
+    //   "configurable": true  属性是否可配置
+    // }
+    console.log(
+      JSON.stringify(Object.getOwnPropertyDescriptor(user, "name"), null, 2)
+    );
+    console.log(
+      JSON.stringify(Object.getOwnPropertyDescriptors(user), null, 2)
+    );
+
+    //添加或设置一个属性, 并不是单纯的修改属性功能
+    Object.defineProperty(user, "name", {
+      value: "陈世美",
+      writable: false, //限制属性是否可以被修改，加了是修改不了的，strict模式下报错
+    });
+    console.log(user.name);
+
+    // 不允许属性添加
+    Object.preventExtensions(user); //锁定，添加不了了
+    user.site = "http://localhost";
+    //提供了一个判断是否可添加的方法
+    if (Object.isExtensible(user)) {
+      user.site = "http://localhost";
+      console.log(user);
+    }
+  </script>
+</html>

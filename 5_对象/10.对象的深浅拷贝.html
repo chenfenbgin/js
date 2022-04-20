@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // *** 以下方式，都是浅拷贝的复制， 不能对多层级的对象进行复制
+
+    //对象复制方式一：使用循环的方式（需要对对象进行一些处理）
+    let hd = { name: "陈世美", url: "http://localhost" };
+    let obj = {};
+    for (const key of hd) {
+      obj[key] = hd[key];
+    }
+    obj.nam = "天选之子";
+    console.log(obj);
+
+    // 复制方式二：（多对象复制推荐）
+    let obj1 = Object.assign({}, hd);
+    console.log(obj1);
+
+    //方式三：(优先)
+    let obj2 = { ...hd };
+  </script>
+</html>
