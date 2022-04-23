@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = {
+      title: "陈世美",
+      url: "https://github.com/",
+      teacher: {
+        name: "天玄自传",
+      },
+
+      // 自定义toJSON返回的数据
+      toJSON: function () {
+        return {
+          // title: "顶峰相见",
+          title: this.title,
+          teacher: this.teacher,
+        };
+      },
+    };
+    let json = JSON.stringify(hd);
+    console.log(json);
+
+    // JSON与js
+    let obj = JSON.parse(json, (key, value) => {
+      if (key == "title") {
+        value = "石昊-" + value;
+      }
+      return value;
+    });
+    console.log(obj.title);
+    console.log(obj);
+  </script>
+</html>

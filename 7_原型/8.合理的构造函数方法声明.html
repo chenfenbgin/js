@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function User(name) {
+      this.name = name;
+      // 可以优化下面的方法
+      // this.show = function () {
+      //   console.log(this.name);
+      // };
+    }
+    // User.prototype.show = function () {
+    //   console.log(this.name);
+    // }
+    // 如果有多个方法，可以将原型写成下面
+    User.prototype = {
+      constructor: User,
+      show() {
+        console.log(this.name);
+      },
+      get() {
+        console.log("get...");
+      },
+    };
+
+    let zhangsan = new User("张三");
+    let lisi = new User("李四");
+    console.log(zhangsan);
+    console.log(lisi);
+    lisi.show();
+    zhangsan.show();
+  </script>
+</html>

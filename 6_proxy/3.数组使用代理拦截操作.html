@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let lessons = [
+      {
+        title: "课程1",
+        category: "css",
+      },
+      {
+        title: "课程2",
+        category: "js",
+      },
+      {
+        title: "课程3",
+        category: "mysql",
+      },
+    ];
+
+    let proxy = new Proxy(lessons, {
+      get(array, key) {
+        // console.log(array);
+        // console.log(key);
+        const title = array[key].title;
+        // console.log(title);
+        // 如果标题大于2个，截断，使用*代替
+        const len = 2;
+        return title.length > len
+          ? title.substr(0, len) + ".".repeat(3)
+          : title;
+      },
+    });
+    console.log(proxy[0])
+   
+  </script>
+</html>

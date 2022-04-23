@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const hd = {
+      name: "陈世美",
+    };
+
+    // 参数：代码的对象，操作方法
+    // 代理：不仅可以对对象进行控制，还可以对函数进行控制
+    const proxy = new Proxy(hd, {
+      get(obj, property) {
+        console.log(property);
+        return obj[property];
+      },
+      set(obj, property, value) {
+        obj[property] = value;
+        console.log(obj[property]);
+        // 严格模式下面，我们需要返回true
+        return true;
+      },
+    });
+
+    // 这个时候，我们通过proxy就可以访问hd了
+    console.log(proxy.name); //陈世美
+    proxy.name = "天选之子";
+    console.log(proxy.name);
+  </script>
+</html>

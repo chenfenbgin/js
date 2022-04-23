@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let a = { url: "http://localhost" };
+    let b = { name: "陈世美" };
+
+    Object.prototype.web = "天选之子";
+    //in不仅检测对象，还会检测原型链
+    console.log("web" in a);
+
+    // 如果不想检测原型链，就使用hasOwnProperty()
+    Object.setPrototypeOf(a, b)
+    console.log(a.hasOwnProperty('name'));
+    // 我们使用for-ofJ就有
+    for (const key in a) {
+      if (a.hasOwnProperty.call(a, key)) {
+        console.log(a);        
+      }
+    }
+  </script>
+</html>
