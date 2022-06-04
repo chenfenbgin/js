@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" />
+    <button id="cancel">取消</button>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.4/underscore-min.js"></script> -->
+    <!-- <script src="./1.debounce基本实现.js"></script> -->
+    <!-- <script src="./2.debounce-immediate立即执行.js"></script> -->
+    <!-- <script src="./3.debounce-取消功能.js"></script> -->
+    <script src="./4.debounce-函数返回值.js"></script>
+    <script>
+      const inputEL = document.querySelector("input");
+      let counter = 0;
+
+      // 对这个函数防抖. 就是不断向后延迟，如果用户继续输的话
+      // inputEL.oninput = function () {
+      //   console.log(`发送了第${++counter}网络请求`);
+      // };
+
+      // 1、使用underscore进行防抖处理
+      const inputChange = function (event) {
+        // this：是元素对象， event.我们实现的有问题。
+        console.log(`发送了第${++counter}网络请求`, this, event);
+
+        // 拿返回值
+        return "aaa";
+      };
+      // inputEL.oninput = _.debounce(inputChange, 500);
+      // inputEL.oninput = debounce(inputChange, 500, true);
+      const debounceChange = debounce(inputChange, 500, false, (res) => {
+        console.log("拿到真正函数的返回值", res);
+      });
+      inputEL.oninput = debounceChange;
+
+      // 节流： 按照一定的频率触发
+      // 2、使用underscore进行节流处理
+      // inputEL.oninput = throttle(inputChange, 2000);
+
+      // 取消功能
+      const cancelBtn = document.querySelector("#cancel");
+      cancelBtn.onclick = () => {
+        debounceChange.cancel();
+      };
+    </script>
+  </body>
+</html>

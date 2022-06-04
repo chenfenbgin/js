@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" />
+    <button id="cancel">取消</button>
+    <script src="./5.throttle-基本实现.js"></script>
+    <script>
+      const inputEL = document.querySelector("input");
+      let counter = 0;
+
+      const inputChange = function (event) {
+        console.log(`发送了第${++counter}网络请求`, this, event);
+      };
+
+      // 节流： 按照一定的频率触发
+      inputEL.oninput = throttle(inputChange, 2000);
+    </script>
+  </body>
+</html>
