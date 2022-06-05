@@ -9,7 +9,10 @@
   <body>
     <input type="text" />
     <button id="cancel">取消</button>
-    <script src="./5.throttle-基本实现.js"></script>
+    <!-- <script src="./5.throttle-基本实现.js"></script> -->
+    <!-- <script src="./6.throttle-leading功能实现.js"></script> -->
+    <script src="./8.throttle-this功能实现.js"></script>
+
     <script>
       const inputEL = document.querySelector("input");
       let counter = 0;
@@ -18,8 +21,18 @@
         console.log(`发送了第${++counter}网络请求`, this, event);
       };
 
-      // 节流： 按照一定的频率触发
-      inputEL.oninput = throttle(inputChange, 2000);
+      // 节流： 按照一定的频率触发， 第三个参数，决定第一次触不触发函数
+      const _throttle = throttle(inputChange, 3000, {
+        leading: true,
+        training: true,
+      });
+      inputEL.oninput = _throttle;
+
+      // 取消功能
+      const cancelBtn = document.querySelector("#cancel");
+      cancel.onclick = () => {
+        _throttle.cancel();
+      };
     </script>
   </body>
 </html>
