@@ -19,9 +19,9 @@
     // 删除, 返回true 、false
     console.log(map.delete("abc")); //false
     console.log(map.delete(obj)); //true
-    console.log(map); //{}
+    console.log(map); //Map(0) {size: 0}
     //检测是否存在
-    console.log(map.has(obj));
+    console.log(map.has(obj)); //false
 
     //遍历map
     let hd = new Map([
@@ -29,15 +29,15 @@
       ["age", "12"],
       ["addredd", "北京"],
     ]);
-    console.log(hd.keys());
-    console.log(hd.values());
-    console.log(hd.entries());
-    for(const [key, value] of hd.entries()) {
+    console.log(hd.keys()); //MapIterator {'name', 'age', 'addredd'}
+    console.log(hd.values()); //MapIterator {'小明', '12', '北京'}
+    console.log(hd.entries()); //MapIterator {'name' => '小明', 'age' => '12', 'addredd' => '北京'}
+    for (const [key, value] of hd.entries()) {
       console.log(key, value);
     }
 
-    hd.forEach((value,key) =>{
-      console.log(value,key);
+    hd.forEach((value, key) => {
+      console.log(value, key);
     });
-</script>
+  </script>
 </html>

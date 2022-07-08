@@ -22,13 +22,15 @@
       if (number) console.log(number); //33
 
       // false: 0       true: 1
+      console.log("false-------------trure-------------");
       console.log(number == true); //false
       console.log(number == false); //false
 
+      console.log("-------------");
       let array = [];
-      console.log(Number(array));
+      console.log("(Number(array)====", Number(array)); //0
       console.log(array == false); //true
-      console.log("Boolean([])", Boolean([]));
+      console.log("Boolean([])", Boolean([])); //true
       // 因为引用类型， 跟上面的比较是有区别的。{}也会执行
       if ([]) console.log("执行");
 
@@ -39,18 +41,18 @@
       //显示转成Boolean类型
       // 方式1
       let number2 = 0;
-      console.log(typeof number);
+      console.log(typeof number); //number
       // !： 取反，其实他完成的是两步：第一步是转成Boolean类型，然后把真变为假，或者把假变为真
       // number2 = !!number2 ; 就是把true变成false了
       number2 = !number2;
-      console.log(number2);
+      console.log(number2); //true
 
       // 方式2：使用构造函数
-      console.log(Boolean(number2));
+      console.log(Boolean(number2)); //true
 
       let array2 = []; // {}、Date()都是如此
-      console.log(Boolean(array2));
-      console.log(!![]);
+      console.log(Boolean(array2)); //true
+      console.log(!![]); //true
     </script>
     11111
   </body>

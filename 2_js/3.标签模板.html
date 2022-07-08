@@ -9,20 +9,21 @@
   <body>
     <script>
       // 例子1
-      // let name = "fengxiu";
-      // let web = "baidu.com";
-      // console.log(tag`在线教程${name},网址是${web}.`);
+      let name = "fengxiu";
+      let web = "baidu.com";
+      console.log(tag`在线教程${name},网址是${web}.`);
 
       // 例子2
       // function tag(strings){
       //   console.log(strings)
       // }
       // 将name web收集到vars中
-      // function tag(strings, ...vars){
-      //   console.log(vars);
-      //   console.log(strings)
-      // }
+      function tag(strings, ...vars) {
+        console.log(vars); // ['fengxiu', 'baidu.com']
+        console.log(strings); // ['在线教程', ',网址是', '.', raw: Array(3)]
+      }
 
+      console.log("=====================");
       // 例子3
       let lesson = [
         {
@@ -51,8 +52,8 @@
         `;
       }
       function links(strings, ...vars) {
-        // console.log(strings);
-        console.log(vars);
+        console.log("strings===", strings);
+        console.log("vars-----", vars);
         return strings
           .map((str, key) => {
             return (

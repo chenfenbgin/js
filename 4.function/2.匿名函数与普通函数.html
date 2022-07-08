@@ -11,9 +11,9 @@
     let hd = function () {
       console.log("chenxiu");
     };
-    hd();
+    hd(); //chenxiu
 
-    show(); //放到前面，按道理会报错；其实是函数提升了
+    show(); // chen, 放到前面，按道理会报错；但不会，其实是函数提升了
     function show() {
       console.log("chen");
     }

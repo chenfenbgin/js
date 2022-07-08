@@ -15,9 +15,9 @@
       // 改变value再返回
       return `前端 - ${value}`;
     });
-    console.log(hd);
+    console.log(hd); // ['前端 - chen', '前端 - xiu']
     // 原数组没有改变，因为是值类型。
-    console.log(arr);
+    console.log(arr); //["chen", "xiu"]
 
     // 对象类型
     const stus = [
@@ -29,7 +29,10 @@
     stus.map(function (value) {
       value.click = 100;
     });
-    console.table(stus);
+    console.log(stus);
+    //0: {name: 'zhangsan', js: 90, click: 100}
+    // 1: {name: 'lisi', js: 59, click: 100}
+    // 2: {name: 'wangwu', js: 94, click: 100}
 
     //如果想要新数组，可以使用assign
     let newarr = stus.map(function (value) {

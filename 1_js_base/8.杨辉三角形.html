@@ -14,25 +14,25 @@
     </style>
     <script>
       // 例子1
-      // for (let i = 0; i < 10; i++) {
-      //   console.log(i);
-      //   for (let n = 0; n < i; n++) {
-      //     document.write("*");
-      //   }
-      //   document.write("<br/>");
-      // }
+      for (let i = 0; i < 10; i++) {
+        console.log(i);
+        for (let n = 0; n < i; n++) {
+          document.write("*");
+        }
+        document.write("<br/>");
+      }
 
       // 例子2
-      // for (let i = 0; i < 5; i++) {
-      //   for (let n = 5 - i; n > 0; n--) {
-      //     document.write(`<span>*</span>`);
-      //   }
-      //   for (let m = 2 * i - 1; m > 0; m--) {
-      //     document.write("*");
-      //   }
+      for (let i = 0; i < 5; i++) {
+        for (let n = 5 - i; n > 0; n--) {
+          document.write(`<span>*</span>`);
+        }
+        for (let m = 2 * i - 1; m > 0; m--) {
+          document.write("*");
+        }
 
-      //   document.write("<br/>");
-      // }
+        document.write("<br/>");
+      }
 
       // 封装成函数
       function yh(row = 10) {

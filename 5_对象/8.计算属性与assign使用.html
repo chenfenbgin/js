@@ -11,7 +11,7 @@
     let hd = {};
     let name = "title";
     hd[name] = "陈世美";
-    console.log(hd.title);
+    console.log(hd.title);//陈世美
 
     // 把数组变成对象的形式
     const lessons = [
@@ -26,13 +26,13 @@
     console.log(JSON.stringify(res, null, 2));
 
     // assign 参数合并
-    function upload(params){
-      let options = { 
-        size: 3333
-      }
+    function upload(params) {
+      let options = {
+        size: 3333,
+      };
       options = Object.assign(options, params);
       console.log(JSON.stringify(options, null, 2));
     }
-    upload({size:9999, type: "jpeg"})
+    upload({ size: 9999, type: "jpeg" });
   </script>
 </html>

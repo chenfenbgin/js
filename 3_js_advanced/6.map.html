@@ -14,7 +14,7 @@
       // '1': "chen.com",
       name: "chen.com",
     };
-    console.log(obj); //{1: 'chen.com'}
+    console.log(obj); //{name: 'chen.com'}
 
     // let hd = {
     //   obj: "haha.com"
@@ -25,8 +25,8 @@
       [obj]: "haha.com",
     };
     console.log(hd); //{[object Object]: 'haha.com'}
-    console.log(hd["[object Object]"]);
-    console.log(hd[obj.toString()]);
+    console.log(hd["[object Object]"]); //haha.com
+    console.log(hd[obj.toString()]); //haha.com
     //发现键名是object, 在取它的值的时候，使用 console.log(hd['[object Object]'])
 
     //Map
@@ -50,11 +50,13 @@
     // key: 1
     // value: "sina.com.cn"
 
-    let map1 = new Map([['lesson', 'css'], ['lesson1', 'js']]);
-    console.log(map1);  //{'lesson' => 'css', 'lesson1' => 'js'} lesson是键，css是值 
+    let map1 = new Map([
+      ["lesson", "css"],
+      ["lesson1", "js"],
+    ]);
+    console.log(map1); //{'lesson' => 'css', 'lesson1' => 'js'} lesson是键，css是值
     //map 可以链式编程
-    map.set('name', 'sina').set('name1', 'chen')
+    map.set("name", "sina").set("name1", "chen");
     console.log(map);
-
   </script>
 </html>

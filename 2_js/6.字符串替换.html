@@ -12,6 +12,8 @@
       const strings = "我喜欢学习php与css知识";
 
       const newword = word.reduce((pre, word) => {
+        console.log('pre===', pre);
+        console.log('word===', word);
         return pre.replace(word, `<a href="?w=${word}">${word}</a>`);
       }, strings);
 

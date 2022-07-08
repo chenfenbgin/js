@@ -13,18 +13,18 @@
       console.log(name, age);
     }
 
-    cd(["陈世美", 0]);
+    cd(["陈世美", 0]); //陈世美 0
 
     // 对象
     function cd2({ name, age }) {
       console.log(name, age);
     }
-    cd2({ name: "陈世美", age: 0 });
+    cd2({ name: "陈世美", age: 0 }); //陈世美 0
 
     // 也可以部分使用解构特性
     function hd(name, { sex, age }) {
       console.log(name, sex, age);
     }
-    hd("陈世美", { sex: "male", age: 23 });
+    hd("陈世美", { sex: "male", age: 23 }); //陈世美 male 23
   </script>
 </html>

@@ -10,16 +10,16 @@
   <script>
     let arr = ["chen", 2022];
     let [name, year] = arr;
-    console.log(name, year);
+    console.log(name, year); //chen 2022
 
     let [name1, ...args] = ["chen", "xiu", 2222];
-    console.log(args);
+    console.log(args);//['xiu', 2222]
 
     let a = ["chen", "xiu", 2222];
     console.log(a);
 
     // 默认值
     let [name3, year2 = 222] = ["chen"];
-    console.log(year2);
+    console.log(year2);//222
   </script>
 </html>

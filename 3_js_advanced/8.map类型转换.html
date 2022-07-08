@@ -16,18 +16,18 @@
     // 转换成数组, 键值对
     console.log([...hd]);
     // 单独转换键
-    console.log([...hd.keys()]);
-    console.log([...hd.values()]);
+    console.log([...hd.keys()]);//['name', 'chen']
+    console.log([...hd.values()]);//['age', '34']
     // 使用for of 其实就是使用[...hd.entries()]
 
-    console.log('=============');
+    console.log("=============");
     // 过滤出chen的数据
-    let arr = [...hd].filter(item => {
+    let arr = [...hd].filter((item) => {
       console.log(item);
-      return item[1].includes('chen')
-    })
+      return item[1].includes("chen");
+    });
     console.log(arr);
     let array = new Map(arr);
     console.log(array);
-</script>
+  </script>
 </html>

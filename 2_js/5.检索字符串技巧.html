@@ -15,14 +15,14 @@
       }
 
       //includes(), 返回的是布尔
-      console.log(cf.includes('e'));
-      console.log(cf.includes('e', 3));
-      console.log(cf.includes('e', 5));
-      console.log(cf.includes('e', 6));
+      console.log(cf.includes("e")); //true
+      console.log(cf.includes("e", 3)); // true
+      console.log(cf.includes("e", 5)); //true
+      console.log(cf.includes("e", 6)); //false
 
       // startsWith()判断开头，可以用于区分大小写
-      console.log(cf.startsWith('c'))
-      console.log(cf.startsWith('f'))
+      console.log(cf.startsWith("c")); //true
+      console.log(cf.startsWith("f")); //false
     </script>
   </body>
 </html>
