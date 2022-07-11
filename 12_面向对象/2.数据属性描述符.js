@@ -11,15 +11,13 @@ Object.defineProperty(obj, "address", {
   value: "深圳",
   // configurable: false：该属性不可删除，也不可修改或者重新定义属性描述符
   configurable: false,
-  
 });
 
 delete obj.name;
 console.log(obj);
 delete obj.address;
 console.log(obj, obj.address); //{ age: 23 }  深圳
-console.log('----------------------------------------------------')
-
+console.log("----------------------------------------------------");
 
 var obj2 = {
   name: "chen",
@@ -40,5 +38,5 @@ for (const key in obj2) {
   console.log(key);
 }
 console.log(Object.keys(obj2));
-obj2.address = '北京'
+obj2.address = "北京";
 console.log(obj2);

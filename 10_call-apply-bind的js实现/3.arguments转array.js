@@ -1,6 +1,6 @@
 // 箭头函数中是没有arguments的
 function foo(num1, num2) {
-  console.log(arguments);
+  console.log("arguments=", arguments); //arguments= [Arguments] { '0': 1, '1': 2, '2': 3, '3': 4 }
   // 取出参数 并乘10
   // 1.方式一：
   // var newArr = [];
@@ -22,7 +22,7 @@ function foo(num1, num2) {
 }
 
 foo(1, 2, 3, 4);
-
+console.log('-----------------');
 // slice内部是这么实现的
 Array.prototype.nsslice = function (start, end) {
   var arr = this;

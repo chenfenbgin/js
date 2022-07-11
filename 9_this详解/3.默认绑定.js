@@ -31,13 +31,12 @@
 // var bar = obj.foo;
 // bar(); // window
 
-
 // 案例4
-function foo(){
-  function bar(){
+function foo() {
+  function bar() {
     console.log(this);
   }
   return bar;
 }
 var fn = foo();
-fn()// window
+fn(); // window

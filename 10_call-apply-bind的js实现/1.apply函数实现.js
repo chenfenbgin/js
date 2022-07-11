@@ -1,6 +1,7 @@
 // 自己实现的apply函数
 Function.prototype.nsapply = function (thisArg, args) {
-  // 1.获取到要执行的参数
+  // 1.获取到要执行的函数
+  console.log('真实需要调用的this===', this); // 这里是 sum()
   var fn = this;
   // 2.处理绑定的thisArg
   thisArg = thisArg ? Object(thisArg) : window;
@@ -28,3 +29,7 @@ function sum(num1, num2) {
 // 自己实现的apply调用
 var result = sum.nsapply("abc", [10, 20, 30, 40]);
 console.log(result);
+
+// 最后打印：
+// sum函数被调用 10 20
+// 30

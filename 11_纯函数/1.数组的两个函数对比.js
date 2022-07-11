@@ -4,33 +4,32 @@ var names = ["abc", "cba", "nab", "a"];
 // slice函数本身不会修改原来的数组
 // slice就是一个纯函数
 var newNames = names.slice(0, 3);
-console.log(newNames);
-console.log(names);
+console.log(newNames); //[ 'abc', 'cba', 'nab' ]
+console.log(names); //[ 'abc', 'cba', 'nab', 'a' ]
 
 // splice不是纯函数
 var newNames2 = names.splice(2);
-console.log(newNames2);
-console.log(names);
-
+console.log(newNames2); // [ 'nab', 'a' ]
+console.log(names);//[ 'abc', 'cba' ]
 
 // baz也不是纯函数，因为我们修改了传入的参数
 function baz(info) {
-  info.age = 23
+  info.age = 23;
 }
 var obj = {
-  name: 'chen',
-  age: 34
-}
+  name: "chen",
+  age: 34,
+};
 baz(obj);
 console.log(obj);
 
-console.log('============');
+console.log("============");
 // 下面这个test是纯函数
 function test(info) {
   return {
     ...info,
-    age: 123
-  }
+    age: 123,
+  };
 }
-test(obj)
+test(obj);
 console.log(obj);

@@ -11,5 +11,5 @@ var p1 = new person("张三", 23);
 var p2 = new person("张三", 23);
 console.log(p1);
 
-console.log('---');
+console.log("---");
 console.log(p1.eating === p2.eating); // false

@@ -16,10 +16,10 @@ function makeAdder(count) {
 }
 
 var result = makeAdder(5)(13);
-console.log('result', result);
+console.log("result", result);
 
 // 对上面的进行复用
-var add5 = makeAdder(5)
-add5(11)
-add5(12)
-add5(13)
+var add5 = makeAdder(5);
+add5(11);
+add5(12);
+add5(13);

@@ -6,4 +6,4 @@ function foo() {
 
 var bar = foo.bind("aaaa");
 
-var obj = new bar();  //foo {}
+var obj = new bar(); //foo {}

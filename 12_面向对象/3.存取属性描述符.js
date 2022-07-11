@@ -1,9 +1,8 @@
 var obj = {
   name: "chen",
   age: 23,
-  _address: '北京市'
+  _address: "北京市",
 };
-
 
 // 有get、set这种就叫存取属性描述符
 Object.defineProperty(obj, "address", {
@@ -22,6 +21,6 @@ Object.defineProperty(obj, "address", {
     this._address = value;
   },
 });
-console.log(obj.address);
-obj.address = '广州'
-console.log(obj.address);
+console.log(obj.address); //北京市
+obj.address = "广州";
+console.log(obj.address); //广州
