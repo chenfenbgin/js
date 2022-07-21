@@ -20,18 +20,18 @@ Student.prototype.studying = function () {
   console.log(this.name + " studying");
 };
 
-var stu = new Student('fuer', 23, ['fuyi']);
+var stu = new Student("fuer", 23, ["fuyi"]);
 console.log(stu); //Person { name: 'fuer', age: 23, friend: [ 'fuyi' ], sno: 111 }
 console.log(stu.name); //fuer
-stu.eating();//fuer eating~
+stu.eating(); //fuer eating~
 
-var stu1 = new Student('fuer', 23, ['fuyi']);
-var stu2 = new Student('fuer', 23, ['zhangsan']);
+var stu1 = new Student("fuer", 23, ["fuyi"]);
+var stu2 = new Student("fuer", 23, ["zhangsan"]);
 console.log(stu1.friend); // [ 'fuyi' ]
-console.log(stu2.friend); // [ 'fuyi' ]
+console.log(stu2.friend); // [ 'zhangsan' ]
 
 stu1.name = "chen";
-console.log(stu1, stu2); // 不一样
+console.log(stu1, stu2); // 不一样 //Person { name: 'chen', age: 23, friend: [ 'fuyi' ], sno: 111 } Person { name: 'fuer', age: 23, friend: [ 'zhangsan' ], sno: 111 }
 
 // 强调： 借用过程也是存在弊端的
 // 弊端1：Person函数至少被调用了两次

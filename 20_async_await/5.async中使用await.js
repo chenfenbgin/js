@@ -20,7 +20,6 @@
 // }
 // foo();
 
-
 function requestData() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -44,13 +43,11 @@ async function foo() {
   // const res1 = await new Promise((resolve) => {
   //   resolve("bbbb");
   // });
- 
 
   // 2.4、reject值，当我们这里面reject的时候，reject的值，会作为整个异步函数foo()的Promise的reject的值，我们需要在外面catch
   const res1 = await requestData();
-   console.log("res", res1);
+  console.log("res", res1);
 }
 foo().catch((err) => {
-  console.log('err---', err);
-})
-
+  console.log("err---", err);
+});

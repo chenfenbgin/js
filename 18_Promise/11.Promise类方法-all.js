@@ -1,14 +1,17 @@
 // 创建多个promise
 const p1 = new Promise((resolve, reject) => {
+  console.log('1--------');
   resolve(111);
 });
 const p2 = new Promise((resolve, reject) => {
   setTimeout(() => {
+    console.log('2----------');
     resolve(222);
   }, 2020);
 });
 const p3 = new Promise((resolve, reject) => {
   setTimeout(() => {
+    console.log('3--------');
     reject(222);
     // resolve("222");
   }, 3000);
@@ -23,5 +26,5 @@ Promise.all([p1, p2, p3, "aaa"])
     // 返回的是一个数组，是按照数组中的顺序返回的
   })
   .catch((err) => {
-    console.log(err);
+    console.log('err=========', err);
   });

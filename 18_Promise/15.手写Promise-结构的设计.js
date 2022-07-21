@@ -30,7 +30,7 @@ const promise = new MyPromise((resolve, reject) => {
   console.log("传入的函数直接被调用了 pending===");
 
   reject(111);
-  resolve(222);
+  // resolve(222);
 });
 
 // 当我们调用then的时候，应该需要两个变量来保存

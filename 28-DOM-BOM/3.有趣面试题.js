@@ -5,19 +5,19 @@ function foo(
   x,
   y = function () {
     x = 3;
-    console.log(x);
+    console.log('x....', x);
   }
 ) {
   console.log(x);
   var x = 2;
   y();
-  console.log(x);
+  console.log('x===',x);
 }
 
 foo();
-console.log(x);
+console.log('x---', x);
 
 // undefined
-// 3
-// 2
-// 1
+// x.... 3
+// x=== 2
+// x--- 1

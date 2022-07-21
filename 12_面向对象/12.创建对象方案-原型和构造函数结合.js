@@ -10,4 +10,4 @@ Person.prototype.eating = function () {
 
 var p1 = new Person("chen", 12);
 var p2 = new Person("fuyi", 23);
-console.log(p1.eating() === p2.eating()) //true
+console.log(p1.eating() === p2.eating()); //true

@@ -12,8 +12,8 @@ const obj = {
 //     console.log("监听到被设置");
 //   },
 // });
-// console.log(obj.name);
-// obj.name = '天选之子'
+// console.log(obj.name); //监听到name被访问       { name: [Getter/Setter], age: 23 }
+// obj.name = "天选之子"; // 监听到被设置
 
 // 2.监听两个属性
 Object.keys(obj).forEach((item) => {
@@ -23,11 +23,11 @@ Object.keys(obj).forEach((item) => {
       console.log("get监听");
     },
     set(value) {
-      obj['item'] = value;
+      obj["item"] = value;
       console.log("set设置");
     },
   });
 });
-obj.name = "kobe";
-obj.age = 23;
-console.log(obj);
+obj.name = "kobe"; //set设置
+obj.age = 23; //set设置
+console.log(obj); //{ name: [Getter/Setter], age: [Getter/Setter], item: 23 }

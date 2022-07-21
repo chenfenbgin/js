@@ -11,7 +11,7 @@ class Person {
     console.log(this.name + " eating~");
   }
 
-  // 出来可以定义方法外， 我们还可以定义 -> 累的访问器方法
+  // 除了可以定义方法外， 我们还可以定义 -> 类的访问器方法
   get address() {
     return this._address;
   }
@@ -28,6 +28,7 @@ class Person {
   }
 }
 
+console.log('Person.prototype===', Person.prototype); // 上面会有eating方法
 var p = new Person("chen", 23);
 p.eating();
 p.address = "北京";
@@ -36,7 +37,7 @@ console.log(p);
 console.log(p.address);
 
 // for
-console.log('--------------------------------')
-for (var i = 0; i <20; i++) {
+console.log("--------------------------------");
+for (var i = 0; i < 20; i++) {
   console.log(Person.createPerson());
 }

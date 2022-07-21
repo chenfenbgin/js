@@ -24,6 +24,7 @@ promise
   })
   .catch((err) => {
     console.log("es6红=====", err);
+    console.log('---------------');
   });
 
   

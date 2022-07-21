@@ -49,11 +49,11 @@ const keys = Object.getOwnPropertySymbols(obj);
 for (const key of keys) {
   console.log(obj[key]);
 }
-
+console.log('---------------');
 // 7、Symbol.for(key)
 const sa = Symbol.for("aaa");
 const sb = Symbol.for("aaa");
-console.log(sa === sb); //true
+console.log(sa, sa === sb); //true
 
 const key = Symbol.keyFor(sa);
 console.log(key);

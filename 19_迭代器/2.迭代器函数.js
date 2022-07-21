@@ -22,6 +22,7 @@ console.log(namesIterator.next());
 console.log(namesIterator.next());
 console.log(namesIterator.next());
 
+console.log('-------------');
 const numIterator = createArrayIterator(num);
 console.log(numIterator.next());
 console.log(numIterator.next());

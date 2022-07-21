@@ -8,23 +8,24 @@
  */
 
 // 2.传入一个Promise
-// new Promise((resolve, reject) => {
-//   // resolve({ name: "chen" }); //普通的对象
-//   resolve(
-//     new Promise((resolve, reject) => {
-//       // 当传入的是Promise的时候，需要先调用这个promise
-//       // resolve('aaaa'); //来到下面then中的res
-//       reject("bbb"); //来到下面then中的err
-//     })
-//   );
-// }).then(
-//   (res) => {
-//     console.log("res===", res);
-//   },
-//   (err) => {
-//     console.log("err", err);
-//   }
-// );
+new Promise((resolve, reject) => {
+  // resolve({ name: "chen" }); //普通的对象
+  resolve(
+    new Promise((resolve, reject) => {
+      // 当传入的是Promise的时候，需要先调用这个promise
+      // resolve('aaaa'); //来到下面then中的res
+      reject("bbb"); //来到下面then中的err
+    })
+  );
+}).then(
+  (res) => {
+    console.log("res===", res);
+  },
+  (err) => {
+    console.log("err", err);
+  }
+);
+console.log('-------------------'); // 先执行
 
 // 3.传入一个对象
 new Promise((resolve, reject) => {

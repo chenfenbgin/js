@@ -1,17 +1,18 @@
 // Promise有哪些对象方法
-// console.log(Object.getOwnPropertyDescriptors(Promise.prototype));
+// console.log(Object.getOwnPropertyDescriptors(Promise.prototype)); // constructor  then catch
 
 const promise = new Promise(function (resolve, reject) {
   resolve("hahahha");
 });
 
 // 1.同一个Promise可以被多次调用then方法
-// 当我们的resolveb被回调是，所有的then方法都会被回调
+// 当我们的resolve被回调是，所有的then方法都会被回调
 promise.then((res) => {
   console.log("res1===", res);
 });
 promise.then((res) => {
   console.log("res2===", res);
+  console.log('---------------');
 });
 
 // 2.then方法传入的'回调函数'是可以有返回值的

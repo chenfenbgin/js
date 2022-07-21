@@ -37,7 +37,7 @@ console.log(iterator.next());
 console.log(iterator.next());
 console.log(iterator.next());
 console.log(iterator.next());
-
+console.log('--------------');
 // 第二次调用iteratorObj[Symbol.iterator]： 生成新的迭代器
 const iterator1 = iteratorObj[Symbol.iterator]();
 console.log(iterator1.next());

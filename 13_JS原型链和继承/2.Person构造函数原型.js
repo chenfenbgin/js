@@ -1,8 +1,6 @@
-function Person(){
+function Person() {}
 
-}
-
-console.log(Person.prototype);  // {}
+console.log(Person.prototype); // {}
 
 // {
 //   constructor: {
@@ -12,5 +10,5 @@ console.log(Person.prototype);  // {}
 //     configurable: true
 //   }
 // }
-console.log(Object.getOwnPropertyDescriptors(Person.prototype)); 
+console.log(Object.getOwnPropertyDescriptors(Person.prototype));
 console.log(Person.prototype.__proto__); //[Object: null prototype] {}

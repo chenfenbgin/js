@@ -19,8 +19,8 @@ console.log(info.hasOwnProperty("address")); // true
 console.log(info.hasOwnProperty("name")); // false
 
 // in操作符： 不管在当前对象还是原型中， 返回的都是true
-console.log("address" in info);
-console.log("name" in info);
+console.log("address" in info); // true
+console.log("name" in info); // true
 
 // for-in 跟 in 都是一样的
 // for (const key in object) {

@@ -43,3 +43,4 @@ function mixinEater(BaseClass) {
 var NewStudent = mixinEater(mixinRunner(Student));
 var ns = new NewStudent();
 ns.eating();
+ns.running();

@@ -11,7 +11,7 @@ const promise = Promise.resolve({
 //   resolve({ name: "zhoaliu" });
 // });
 promise.then((res) => {
-  console.log("res", res);
+  console.log("res------", res);
 });
 
 // 2.传入Promise

@@ -50,9 +50,9 @@ const promise = new MyPromise((resolve, reject) => {
 // 当我们调用then的时候，应该需要两个变量来保存
 promise.then(
   (res) => {
-    console.log("res:", res);
+    console.log("res:----", res);
   },
   (err) => {
-    console.log("err", err);
+    console.log("err===", err);
   }
 );

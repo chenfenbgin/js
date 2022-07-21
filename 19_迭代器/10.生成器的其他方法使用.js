@@ -16,7 +16,7 @@ function* foo() {
   console.log('函数执行结束！')
 }
 
-foo()
+// foo()
 
 
 // 1. 生成器上的next方法可以传递参数

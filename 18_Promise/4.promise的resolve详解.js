@@ -9,8 +9,8 @@
 // Promise状态一旦确定下来，那么就是不可更改的（锁定）
 new Promise((resolve, reject) => {
   console.log("----------------直接执行"); // promise处于pedding状态
-  resolve(res);
-  reject(res); //这行代码是没有意义的，已经锁定了
+  resolve('hhhhhhhhhh');
+  reject('xixiix'); //这行代码是没有意义的，已经锁定了
 })
   .then((res) => {
     // fulfiled状态（已固定）

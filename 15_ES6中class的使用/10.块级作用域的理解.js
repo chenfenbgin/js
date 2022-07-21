@@ -9,11 +9,11 @@
 // 2、在es5中只有两个东西会形成作用域
 // a. 全局作用域
 // b. 函数作用域
-// function foo2(){
-//   var foo = "foo";
-// }
+function foo2(){
+  var foo = "foo";
+}
 
-// console.log(foo);
+console.log(foo2);
 
 // es6的代码块级作用域
 // 对let/const/function/class声明的类型是有效的
