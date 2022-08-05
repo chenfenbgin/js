@@ -4,16 +4,10 @@
 // 1.传入一个普通的值
 const promise = Promise.resolve({
   name: "chen",
-});
-
-// 上面的写法，相当于下面
-// const promise2 = new Promise((resolve, reject) => {
-//   resolve({ name: "zhoaliu" });
-// });
-promise.then((res) => {
+}).then((res) => {
   console.log("res------", res);
 });
-
+console.log('wwwwwwwwww')
 // 2.传入Promise
 const promise3 = Promise.resolve(
   new Promise((resolve, reject) => {

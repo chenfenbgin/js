@@ -14,7 +14,7 @@ new Promise((resolve, reject) => {
 })
   .then((res) => {
     // fulfiled状态（已固定）
-    console.log("res成功");
+    console.log("res成功", res);
   })
   .catch((err) => {
     // rejected状态（已拒绝）

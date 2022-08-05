@@ -20,4 +20,6 @@ const promise = new Promise((resolve, reject) => {
 });
 
 // then方法传入的函数，会在promise执行resolve函数是被回调。
-promise.then(() => {});
+promise.then(() => {
+  console.log('then被执行了');
+});

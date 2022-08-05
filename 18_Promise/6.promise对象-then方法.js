@@ -12,7 +12,7 @@ promise.then((res) => {
 });
 promise.then((res) => {
   console.log("res2===", res);
-  console.log('---------------');
+  console.log("---------------");
 });
 
 // 2.then方法传入的'回调函数'是可以有返回值的
@@ -34,8 +34,10 @@ promise
 //  2> 如果返回的是一个Promise，依然会继续使用new Promise()进行包裹
 promise
   .then((res) => {
+    console.log('res3: ' + res)
     return new Promise((resolve, reject) => {
       setTimeout(() => {
+        console.log('setTimeout开始执行');
         resolve(1111);
       }, 4000);
     });
@@ -52,6 +54,7 @@ promise
   .then((res) => {
     return {
       then: function (resolve, reject) {
+        console.log('对象中的then执行-----');
         resolve(2222);
       },
     };
