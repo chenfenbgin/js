@@ -11,6 +11,5 @@ function throttle(fn, interval) {
       lastTime = nowTime;
     }
   };
-
   return _throttle;
 }

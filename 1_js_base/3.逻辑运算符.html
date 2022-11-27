@@ -25,7 +25,7 @@
       console.log(inputs)
 
       //每个input加上键盘抬起事件
-      [...inputs].map(item => {
+      inputs.forEach(item => {
         item.addEventListener("keyup", function() {
           let msg = ''
           if(query('password').value != query('confirm_password').value || 
