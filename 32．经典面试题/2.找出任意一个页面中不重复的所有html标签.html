@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+  </body>
+  <script>
+    // 1、所有html标签
+    document.querySelectorAll("*") // 得到的是一个伪数组
+    // 伪数组如何转换成数组，使用扩展运算符
+    let set = [...new Set([...document.querySelectorAll("*")].map(v => v.tagName))]
+    // 2、不重复
+  </script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="input" />
+  </body>
+  <script>
+    // 防抖函数
+    function debounce(callback, delay) {
+      let timer;
+      return function (arg) {
+        clearTimeout(timer);
+        // 我们想清除的是setTimeout,我们应该存储这个timer的变量
+        // timer变量需要一直保存在内存当中, 内存的泄露，这就要使用闭包了
+        timer = setTimeout(function () {
+            callback(arg);
+        }, delay);
+      };
+    }
+    function func(value) {
+      console.log("value", value);
+    }
+
+    const input = document.getElementById("input");
+    const debounceFn = debounce(func, 1000);
+    input.addEventListener("keyup", function (e) {
+        debounceFn(e.target.value);
+    });
+  </script>
+</html>
