@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var obj = {
+        birth: 1996,
+        getAge: function () {
+          var b = this.birth; // 1996
+          var fn = () => new Date().getFullYear() - this.birth; // this指向obj
+          return fn();
+        },
+      };
+      console.log(obj.getAge()) // 27
+
+      // 箭头函数本身是在getAge方法中定义的，因此，getAge方法的父执行上下文就是obj
+    </script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Symbol解决：属性名重复，导致属性值被覆盖的情况
+      // Symbol： 基本数据类型是不需要new的；只是声明的方式而已，像 new String('1234')也是可以的
+      // Set Map Array ，向这种都是引用数据类型
+
+      console.log(Symbol() === Symbol()); // false,类比NaN
+      console.log(Symbol("abcdef")); // 传入参数，只是修饰的作用
+
+      // Symbol不能用四则运算进行操作，否则会报错。它只能用显示的方式转为字符串和布尔值， String(Symbol()) / Boolean(Symbol())
+      // Symbol作为对象属性的时候，有三种写法
+      // 1、
+      var s = Symbol();
+      var obj = {
+        [s]: "A",
+      };
+      console.log(obj);
+
+      // 2、
+      let mySymbol = Symbol();
+      let a = {};
+      a[mySymbol] = "B";
+      console.log(a);
+
+      // 3、
+      let c = {};
+      Object.defineProperty(c, mySymbol, { value: 'c'});
+      console.log(c);
+
+
+      var person = {
+        name: '荒天帝',
+        age: 12,
+        [Symbol('level')]: "A"
+      }
+      for(var i in person) {
+        console.log(i);
+      }
+      // 并不具备迭代器的接口 Symbol.iterator
+      // for(var i of person){   // 报错
+      //   console.log(i);
+      // }
+
+      console.log(Object.keys(person));
+      console.log(Object.getOwnPropertySymbols(person)); // getOwnPropertySymbols只是打印Symbol的属性
+
+      // 我们使用Reflect.ownKeys， 可以获取所有的属性，包括Symbol,以后推荐使用，而不是Object.keys()
+      console.log(Reflect.ownKeys(person)); // ['name', 'age', Symbol(level)]
+
+      // 如果想实现Symbol() 相等，可以使用Symbol.for(), Symbol.for()会在创建之前全局寻找，有没有通过Symbol.for()方式创建并且字符串相同的，创建了就会在全局中进行登记。
+      let s1 = Symbol.for('foo')
+      let s2 = Symbol.for('foo')
+      console.log('s1 === s2: ', s1 === s2);
+    </script>
+  </body>
+</html>

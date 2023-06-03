@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .father {
+      /* 
+          BFC的创建方法： 
+      */
+      
+      /* 方法1、这是父元素的float的值不是none，父元素设置了高度，就形成了BFC */
+      /* float: left; */
+      
+      /* 方法2、position的值不是static或者relative */
+      /* position: absolute; */
+      
+      /* 方法3：display的值是 inline-block、flex、inline-flex */
+      /* display: inline-flex; */
+
+      /* 方法4：overflow: hidden */
+      overflow: hidden;
+    
+      /* 这四种方法，里面最好的形成BFC，是overflow: hidden */
+    }
+
+    .son {
+      width: 300px;
+      height: 300px;
+      background-color: red;
+      float:left;
+      border: 1px solid greenyellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="father">
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+    <a href="http://www.baidu.com">我要去百度</a>
+  </div>
+</body>
+</html>

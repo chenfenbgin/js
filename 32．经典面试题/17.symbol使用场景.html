@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const type = {
+        type1: "类型1",
+        type2: "类型2",
+        type3: "类型3",
+      };
+      function getType(arg) {
+        if(arg === type.type1) {
+          console.log('类型1');
+        }else if(arg === type.type2) {
+          console.log('类型2');
+        }else if(arg === type.type3){
+          console.log('类型3');
+        }
+      }
+
+      console.log(getType('类型1'));
+      console.log(getType(type.type1));
+    </script>
+  </body>
+</html>
