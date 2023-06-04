@@ -47,6 +47,7 @@ console.log(unique4(arr));
 // 去重方式5： filter
 function unique4(arr) {
   return arr.filter(function (item, index) {
+    // indexOf(item, 0)：表示在元素中第一次出现的索引值
     // indexOf查找值，只会找到第一次查到的索引值，后续有相同的值不会找出来
     return arr.indexOf(item, 0) === index;
   });

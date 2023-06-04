@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 定义发布者
+      var showObj = {};
+      // 有一个列表用来存放订阅者需要执行的回调函数
+      showObj.list = [];
+
+      // 增加订阅者
+      showObj.listen = function (key, fn) {
+        if (!this.list[key]) {
+          this.list[key] = [];
+        }
+        this.list[key].push(fn);
+      };
+
+      // 发布消息
+      showObj.trigger = function () {
+        // 去除key
+        var key = Array.prototype.shift.call(arguments);
+        var fns = this.list[key];
+        if (!fns || fns.length === 0) {
+          return;
+        }
+        // 遍历这个数组，然后执行这个函数
+        for (var i = 0, fn; (fn = fns[i++]); ) {
+          fn.apply(this, arguments);
+        }
+      };
+
+      // 1、进行订阅
+      showObj.listen("red", function (color, size) {
+        console.log(`颜色是${color}, 尺码是${size}`);
+      });
+      showObj.listen("black", function (color, size) {
+        console.log(`再次打印颜色是${color}, 尺码是${size}`);
+      });
+      // 2、进行发布
+      showObj.trigger("red", "红色", 38);
+      showObj.trigger("black", "黑色", 41);
+    </script>
+  </body>
+</html>
