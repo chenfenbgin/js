@@ -1,10 +1,14 @@
+/*
+ * @des: ''
+ * @author: fengbin.chen
+ */
 const p1 = new Promise((resolve, reject) => {
-  console.log('1------');
+  console.log('1-------');
   resolve(111);
 });
 const p2 = new Promise((resolve, reject) => {
   setTimeout(() => {
-    console.log('2--------');
+    console.log('2-------');
     resolve(222);
   }, 2020);
 });

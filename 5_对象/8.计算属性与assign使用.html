@@ -1,3 +1,7 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,6 +28,21 @@
       return obj;
     }, {});
     console.log(JSON.stringify(res, null, 2));
+    // 控制台输出：
+    // {
+    //   "css-0": {
+    //     "title": "响应式布局",
+    //     "category": "css"
+    //   },
+    //   "css-1": {
+    //     "title": "弹性盒模型",
+    //     "category": "css"
+    //   },
+    //   "mysql-2": {
+    //     "title": "数据库",
+    //     "category": "mysql"
+    //   }
+    // }
 
     // assign 参数合并
     function upload(params) {

@@ -8,3 +8,9 @@ async function foo() {
 console.log("script start");
 foo();
 console.log("script end");
+
+// script start
+// 内部代码执行1
+// 内部代码执行2
+// 内部代码执行3
+// script end

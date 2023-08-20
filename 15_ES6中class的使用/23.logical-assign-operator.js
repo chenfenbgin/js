@@ -1,3 +1,7 @@
+/*
+ * @des: ''
+ * @author: fengbin.chen
+ */
 // 1、 ||= 逻辑或赋值运算
 let message = undefined;
 // message = message || '空值';
@@ -11,4 +15,6 @@ let message1 = 0; //这不是undefined和null
 let message2 = "";
 message1 ??= "空值";
 console.log(message1);//0
-console.log(message2);
+if(message1){
+  console.log('message2: ', message2);
+}

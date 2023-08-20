@@ -1,3 +1,7 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,19 +20,19 @@
     // 代理：不仅可以对对象进行控制，还可以对函数进行控制
     const proxy = new Proxy(hd, {
       get(obj, property) {
-        console.log(property);
+        console.log('触发get函数：', property);
         return obj[property];
       },
       set(obj, property, value) {
         obj[property] = value;
-        console.log(obj[property]);
+        console.log('触发set函数：', obj[property]);
         // 严格模式下面，我们需要返回true
         return true;
       },
     });
 
     // 这个时候，我们通过proxy就可以访问hd了
-    console.log(proxy.name); //陈世美
+    console.log('proxy.name', proxy.name); //陈世美
     proxy.name = "天选之子";
     console.log(proxy.name);
   </script>

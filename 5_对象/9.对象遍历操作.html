@@ -1,3 +1,7 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,14 +16,28 @@
       name: "chen",
       year: "2020",
     };
-    console.log(Object.keys(hd));
-    console.log(Object.values(hd));
+    console.log(Object.keys(hd)); // ['name', 'year']
+    console.log(Object.values(hd)); //  ['chen', '2020']
     console.log(JSON.stringify(Object.entries(hd), null, 2));
+    // [
+    //   [
+    //     "name",
+    //     "chen"
+    //   ],
+    //   [
+    //     "year",
+    //     "2020"
+    //   ]
+    // ]
 
     // for-in , 使用for-of是不行的，for-of可以遍历迭代对象
     for (const key in hd) {
-      console.log(hd[key]);
+      console.log('key----hd[key]: ', key, hd[key]);
     }
+
+    // for (const iterator of hd) {
+    //   console.log('iterator:', iterator); // 报错，hd is not iterable
+    // }
 
     // 我们也可以使用for-of，如下
     for (const [key, value] of Object.entries(hd)) {

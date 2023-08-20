@@ -1,3 +1,7 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,7 +16,7 @@
     let edu = {
       name: "张三",
       show: function () {
-        console.log(this);
+        console.log('this....', this); // {name: '张三', show: ƒ}
         function render() {
           console.log(this, this.name); //  全局的对象window
         }

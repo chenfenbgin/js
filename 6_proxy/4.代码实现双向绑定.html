@@ -1,3 +1,7 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +11,7 @@
     <title>Document</title>
   </head>
   <body>
-    <input type="text" v-model="content" />
+    <input type="text" v-model="title" />
     <input type="text" v-model="title" />
     <input type="text" v-model="title" />
     <h4 v-bind="title">这里也会发生更新</h4>
@@ -19,15 +23,16 @@
         {
           get(obj, property) {},
           set(obj, property, value) {
-            console.log(value);
+            console.log('property, value: ', property, value);
             document
               .querySelectorAll(`[v-model="${property}"]`)
               .forEach((item) => {
+                console.log('item: ' + item);
                 item.value = value;
               });
 
             document
-              .querySelectorAll(`[v-bimd="${property}"]`)
+              .querySelectorAll(`[v-bind="${property}"]`)
               .forEach((item) => {
                 item.innerHTML = value;
               });
@@ -45,6 +50,6 @@
         });
       };
     }
-    new View().init;
+    new View().init();
   </script>
 </html>

@@ -1,3 +1,7 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,7 +16,7 @@
       site: "李四",
       lists: ["js", "css", "mysql"],
       show: function () {
-        console.log(this, this.site, this.lists);
+        console.log(this, this.site, this.lists); // this就是lession对象
         const self = this; //这个this， 就是lesson了
         // 方式一： self = this
         // return this.lists.map(function (value) {

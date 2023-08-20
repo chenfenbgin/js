@@ -1,3 +1,7 @@
+/*
+ * @des: ''
+ * @author: fengbin.chen
+ */
 // 类方法Promise.resolve:
 // 将一个对象转成Promise
 
@@ -5,9 +9,9 @@
 const promise = Promise.resolve({
   name: "chen",
 }).then((res) => {
-  console.log("res------", res);
+  console.log("2. res------", res);
 });
-console.log('wwwwwwwwww')
+console.log('1. wwwwwwwwww')
 // 2.传入Promise
 const promise3 = Promise.resolve(
   new Promise((resolve, reject) => {
@@ -15,5 +19,5 @@ const promise3 = Promise.resolve(
   })
 );
 promise3.then((res) => {
-  console.log("res===", res);
+  console.log("3. res===", res);
 });

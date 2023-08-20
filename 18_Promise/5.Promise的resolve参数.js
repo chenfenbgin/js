@@ -1,3 +1,7 @@
+/*
+ * @des: ''
+ * @author: fengbin.chen
+ */
 /**
  * resolve(参数)
  *    1> 普通的值或者对象 pedding -> fulfiled
@@ -19,7 +23,7 @@ new Promise((resolve, reject) => {
   );
 }).then(
   (res) => {
-    console.log("res===", res);
+    console.log("res============", res);
   },
   (err) => {
     console.log("err", err);

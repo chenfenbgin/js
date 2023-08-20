@@ -1,3 +1,7 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,13 +16,13 @@
       this.name = name;
     }
     let hd = new User("张三");
-    console.log(hd);
+    console.log('hd....', hd);
     function createByObject(obj, ...args) {
       const constructor = Object.getPrototypeOf(obj).constructor;
       console.log(constructor, constructor === User);
       return new constructor(...args);
     }
     let xj = createByObject(hd, '陈世美')
-    console.log(xj);
+    console.log('xj: ', xj);
   </script>
 </html>

@@ -1,3 +1,7 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,7 +17,7 @@
     //对象复制方式一：使用循环的方式（需要对对象进行一些处理）
     let hd = { name: "陈世美", url: "http://localhost" };
     let obj = {};
-    for (const key of hd) {
+    for (const key in hd) { // 不可以使用for-of，因为 hd is not iterable
       obj[key] = hd[key];
     }
     obj.nam = "天选之子";

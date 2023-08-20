@@ -1,5 +1,9 @@
+/*
+ * @des: ''
+ * @author: fengbin.chen
+ */
 // Promise有哪些对象方法
-// console.log(Object.getOwnPropertyDescriptors(Promise.prototype)); // constructor  then catch
+console.log('Promise对象方法: ', Object.getOwnPropertyDescriptors(Promise.prototype)); // constructor  then catch finally
 
 const promise = new Promise(function (resolve, reject) {
   resolve("hahahha");

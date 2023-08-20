@@ -1,3 +1,7 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,8 +21,10 @@
     console.log(user["name"]);
     console.log(user["my age"]);
 
+    console.log('=============');
     // for
     for (const key in user) {
+      console.log('key...', key);
       // console.log(user.key);  //打印出来的是undefined
       console.log(user[key]); // 天选之子 12
     }

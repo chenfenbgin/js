@@ -1,3 +1,7 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,16 +13,16 @@
   <body></body>
   <script>
     // 最后退出循环，i= 4
-    // for (var i = 0; i <= 3; i++) {
-    //   console.log(i); // 1 2 3
-    // }
-    // console.log(i); // 4
+    for (var i = 0; i <= 3; i++) {
+      console.log(i); // 0 1 2 3
+    }
+    console.log('i........', i); // 4
 
 
     // let的作用域就是：for
-    for (let i = 0; i <= 3; i++) {
-      console.log(i); // 1 2 3
-    }
-    console.log(i); // 报错，使用let，是找不到i的，有块作用域
+    // for (let i = 0; i <= 3; i++) {
+    //   console.log(i); // 1 2 3
+    // }
+    // console.log(i); // 报错，使用let，是找不到i的，有块作用域
   </script>
 </html>

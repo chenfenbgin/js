@@ -1,3 +1,7 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,8 +11,8 @@
     <title>Document</title>
   </head>
   <body>
-    <input type="text" name="password" />
-    <input type="text" name="confirm_password" />
+    密码：<input type="text" name="password" />
+    确认密码：<input type="text" name="confirm_password" />
 
     <br />
     <span name="msg"></span>
@@ -26,6 +30,7 @@
 
       //每个input加上键盘抬起事件
       inputs.forEach(item => {
+        console.log('item: ', item);
         item.addEventListener("keyup", function() {
           let msg = ''
           if(query('password').value != query('confirm_password').value || 

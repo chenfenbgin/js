@@ -1,6 +1,10 @@
+/*
+ * @des: ''
+ * @author: fengbin.chen
+ */
 // 创建多个promise
 const p1 = new Promise((resolve, reject) => {
-  console.log('1--------');
+  console.log('1----------');
   resolve(111);
 });
 const p2 = new Promise((resolve, reject) => {
@@ -11,7 +15,7 @@ const p2 = new Promise((resolve, reject) => {
 });
 const p3 = new Promise((resolve, reject) => {
   setTimeout(() => {
-    console.log('3--------');
+    console.log('3----------');
     reject(222);
     // resolve("222");
   }, 3000);

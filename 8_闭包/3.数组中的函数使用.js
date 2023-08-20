@@ -1,9 +1,14 @@
+/*
+ * @des: ''
+ * @author: fengbin.chen
+ */
 // map: 映射
 var nums = [1, 2, 3, 4, 5, 6];
 var newNums = nums.map(function (item) {
   return item * 10;
 });
-console.log(newNums); //[ 10, 20, 30, 40, 560 ]
+console.log('newNums: ', newNums); //[ 10, 20, 30, 40, 560 ]
+console.log('nums:', nums); // [ 1, 2, 3, 4, 5, 6 ]
 
 // reduce: 映射
 // 第一次： pre: 0, item: 1

@@ -7,4 +7,4 @@ function foo() {
 var fn1 = foo();
 var fn2 = foo();
 // 用变量接受，产生了两个函数对象
-console.log(fn1 === fn2);
+console.log(fn1 === fn2); // false

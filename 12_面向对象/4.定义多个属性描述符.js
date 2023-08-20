@@ -20,4 +20,4 @@ Object.defineProperties(obj, {
   },
 });
 
-console.log(obj, obj.age);
+console.log(obj, obj.age); // { _age: 32, name: 'chen' } 32

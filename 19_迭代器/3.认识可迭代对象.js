@@ -46,7 +46,7 @@ console.log(iterator1.next());
 console.log(iterator1.next());
 
 // 3.for...of 可以遍历的东西必须是一个可迭代对象
-// for其实是语法糖，做的就是iterator.next()，拿到对象，然后在取.value。当done:false,就把value取出来。done为true的时候，就停止遍历
+// for-of其实是语法糖，做的就是iterator.next()，拿到对象，然后在取.value。当done:false,就把value取出来。done为true的时候，就停止遍历
 const obj = {
   name: "chen",
   age: 23,

@@ -1,3 +1,7 @@
+/*
+ * @des: ''
+ * @author: fengbin.chen
+ */
 // 案例1
 // function foo() {
 //   console.log(this);
@@ -15,7 +19,13 @@ var obj1 = {
   foo: function () {
     console.log(this); // obj2
   },
+  foo1: () => {
+    console.log('箭头函数this...', this);
+  }
 };
+
+console.log('obj1.foo()...', obj1.foo); // [Function: foo]
+console.log('箭头函数this...', obj1.foo1); // [Function: foo]
 
 var obj2 = {
   name: "obj2",

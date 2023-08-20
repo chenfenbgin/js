@@ -1,3 +1,7 @@
+/*
+ * @des: ''
+ * @author: fengbin.chen
+ */
 const obj = {
   name: "chen",
   age: 23,
@@ -5,10 +9,12 @@ const obj = {
 
 const objProxy = new Proxy(obj, {
   get(target, key) {
+    console.log('get调用======');
     // return target[key];
     return Reflect.get(target, key);
   },
   set(target, key, value) {
+    console.log('set调用======');
     // target[key] = value;
     // 其实Reflect设置值会返回一个布尔值的
     Reflect.set(target, key, value);

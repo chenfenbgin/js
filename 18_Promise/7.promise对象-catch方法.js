@@ -1,3 +1,7 @@
+/*
+ * @des: ''
+ * @author: fengbin.chen
+ */
 const promise = new Promise((resolve, reject) => {
   reject("Error");
   // 其实抛出异常，也会执行第二个回调
@@ -8,13 +12,13 @@ const promise = new Promise((resolve, reject) => {
 promise.then(
   () => {},
   (err) => {
-    console.log("err----", err);
+    console.log("1. err----", err);
   }
 );
 // 2、通过catch方法传入错误捕获的回调函数，只是另外一种写法
 // promise/a+规范
 promise.catch((err) => {
-  console.log("err===", err);
+  console.log("2. err===", err);
 });
 
 // 3、es6中的语法糖
@@ -42,8 +46,8 @@ promise1
     return "catch return value";
   })
   .then((res) => {
-    console.log("res result===", res);
+    console.log("这里执行，res result===", res);
   })
   .catch((err) => {
-    console.log("err result===", err);
+    console.log("上面返回的catch不会在来这里执行err result===", err);
   });

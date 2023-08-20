@@ -6,4 +6,4 @@ var obj = {
 };
 
 var f = new obj.foo(); //foo {}
-console.log('f============', f);
+console.log('f============', f);  // foo {}
