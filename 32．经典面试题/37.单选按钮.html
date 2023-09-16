@@ -1,0 +1,38 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="https://www.baidu.com" target="" method="get">
+    <!-- checked： 默认选中 -->
+    <input id="newCar" type="radio" name="findCar" value="newCar" checked> 
+    <!-- 写法一： 点击新增文字可能选中，可以使用label标签 -->
+    <label for="newCar">新车</label>
+
+
+    <!-- 写法二： -->
+    <label>
+      <input type="radio" name="findCar" value="newCar2"> 二手车
+    </label>
+    
+    <hr />
+<!-- size属性列表展示多条 -->
+    <select name="car" size="4">
+      <option>请选择</option>
+      <option value="1" selected>1</option>
+      <option value="">2</option>
+      <option value="">3</option>
+      <option value="">4</option>
+    </select>
+
+  </form>
+</body>
+</html>
