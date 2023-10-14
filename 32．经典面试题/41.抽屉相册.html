@@ -1,0 +1,76 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+      }
+      .box {
+        width: 1200px;
+        height: 550px;
+        display: flex;
+        /* 设置阴影 */
+        -webkit-box-reflect: below 15px
+          linear-gradient(transparent 50%, rgba(255, 255, 255, 0.3));
+      }
+      .img-box {
+        width: 100px;
+        height: 550px;
+        overflow: hidden;
+
+        transform: 1s;
+      }
+      .img-box img {
+        width: 100%;
+        height: 100%;
+        /* 跟background-size一样 */
+        object-fit: cover;
+      }
+      .img-box:last-child {
+        width: 1000px;
+      }
+      .img-box:hover {
+        cursor: pointer;
+        width: 1000px;
+      }
+      .img-box:hover ~ .img-box:last-child {
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="img-box">
+        <img src="./images/1.jpg" alt="" />
+      </div>
+      <div class="img-box">
+        <img src="./images/2.jpg" alt="" />
+      </div>
+      <div class="img-box">
+        <img src="./images/3.png" alt="" />
+      </div>
+      <div class="img-box">
+        <img src="./images/4.jpg" alt="" />
+      </div>
+      <div class="img-box">
+        <img src="./images/5.jpg" alt="" />
+      </div>
+    </div>
+  </body>
+</html>

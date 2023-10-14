@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .outer {
+        width: 400px;
+        /* height: 200px; */
+        background-color: #ccc;
+        /* 设置padding，或者border,解决塌陷，然后把高度去掉，不然还是会出去的.不设置height,高度由子元素撑开 */
+        /* padding: 1px; */
+        /* 解决方式2：设置overflow: hidden, 触发bfc */
+        overflow: hidden;
+      }
+      div div {
+        height: 100px;
+        width: 100px;
+      }
+      .d1 {
+        /* maring塌陷问题，其实是outer盒子往下移50px */
+        margin-top: 50px;
+        background-color: orange;
+      }
+      .d2 {
+        background-color: orangered;
+        margin-bottom: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="d1"></div>
+      <div class="d2"></div>
+    </div>
+  </body>
+</html>

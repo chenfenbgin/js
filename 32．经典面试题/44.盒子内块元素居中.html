@@ -1,0 +1,62 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .outer {
+        width: 400px;
+        height: 400px;
+        background-color: gray;
+        text-align: center;
+        border-radius: 15px;
+        text-align: center;
+        border-radius: 25px;
+        overflow: hidden;
+      }
+      .inner {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        /* 出出現margin塌陷 */
+        margin-top: 150px;
+        line-height: 100px;
+        text-align: center;
+        background-color: tomato;
+        border-radius: 25px;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="inner">萧家萧炎</div>
+    </div>
+  </body>
+</html>

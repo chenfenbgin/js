@@ -1,0 +1,56 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .outer {
+        width: 500px;
+        padding: 20px;
+        background-color: gray;
+      }
+      div div {
+        width: 200px;
+        height: 200px;
+        font-size: 20px;
+      }
+      .box1 {
+        background-color: green;
+      }
+      .box2 {
+        /* 方式1 */
+        /* margin-left: 50px; */
+        /* 方式2：相对定位, 所谓的相对位置，指的是：相对于当初元素最初自己的位置，
+                 发生了位置变化之后，元素当初自己的位置，是不会被释放的（原来的位置是不释放的）
+        */
+
+        /* 开启相对定位总结：
+              1.开启相对定位，不脱离文档流
+              2.相对于元素最初自己的位置，不释放元素原来的位置
+              3.相对定位元素，层级会变化，如果出现了叠加，定位元素在上面
+
+          注：1.位置的微调   2. 配合绝对定位一起使用
+        */
+        position: relative;
+        left: 50px;
+        top: 50px;
+        background-color: tomato;
+      }
+      .box3 {
+        background-color: turquoise;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="box1">1</div>
+      <div class="box2">2</div>
+      <div class="box3">3</div>
+    </div>
+  </body>
+</html>

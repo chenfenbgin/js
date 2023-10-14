@@ -1,0 +1,45 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .outer {
+        width: 400px;
+        height: 400px;
+        background-color: gray;
+        text-align: center;
+        border-radius: 15px;
+        text-align: center;
+        /* 将图片当成文字一样水平居中，但是会发现图片是按文字基线对齐的。这个可以采用vertical-align：middle进行居中 */
+        line-height: 400px;
+        /* 图片随着font-size:大小进行变化，有个技巧，可以设置font-size: 0进行居中 */
+        font-size: 0;
+        border-radius: 25px;
+      }
+      img {
+        width: 100px;
+        /* 高度不设置也是可以的 */
+        height: 100px;
+        vertical-align: middle;
+        border-radius: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">萧家<img src="./images/1.jpg" alt="" /></div>
+  </body>
+</html>

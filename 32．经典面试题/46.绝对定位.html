@@ -1,0 +1,57 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .outer {
+        width: 500px;
+        padding: 20px;
+        background-color: gray;
+      }
+      div div {
+        width: 200px;
+        height: 200px;
+        font-size: 20px;
+      }
+      .box1 {
+        background-color: green;
+      }
+      .box2 {
+        /* 开始后，box3就看不见了。直接脱离了原来的位置。层级发生了变化 */
+        /* 包含块： 
+              1.元素没有脱离文档流，父元素就是他的包含块
+              2.元素脱离了文档流（开启了绝对定位）,第一个开启定位属性的祖先元素
+        */
+        /* 子绝父相 */
+        /* 绝对定位： 
+              1.开启绝对定位的元素，会脱离文档流，定位元素
+              2.位置计算相对于自己的包含块
+              3.开启绝对定位的元素，会压着其他元素
+        */
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        background-color: tomato;
+      }
+      .box3 {
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        background-color: turquoise;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="box1">1</div>
+      <div class="box2">2</div>
+      <div class="box3">3</div>
+    </div>
+  </body>
+</html>
