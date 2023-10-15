@@ -1,0 +1,61 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .outer {
+        width: 500px;
+        background-color: aliceblue;
+        border: 1px solid tomato;
+      }
+      .box {
+        /* 父容器高度坍塌： 父容器的高度，因为子元素的float,产生了一个坍塌效果  */
+        /* 
+          高度坍塌的根本问题： 
+              1.父容器高度自适应  2.子元素浮动        
+        */
+        /* 
+          产生的影响： 
+              1.父元素之后的兄弟，位置会发生变化      
+        */
+        /* float: left; */
+        width: 100px;
+        height: 100px;
+        background-color: greenyellow;
+        border: 1px solid turquoise;
+        margin: 10px;
+      }
+      .box1, .box2, .box3 {
+        float: left;
+        /* 产生的影响： 2.浮动元素在前，普通元素在后，浮动元素会对身后的普通元素产生影响，文字、内容会避开浮动盒子 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="box box1">盒子1</div>
+      <div class="box box2">盒子2</div>
+      <div class="box box3">盒子3</div>
+      <div class="box box4">盒子4</div>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita rerum
+      autem repellat eum. Ipsum labore possimus deleniti, quaerat doloribus
+      magni optio quasi nostrum quidem quibusdam odit non sit id illum
+      dignissimos corrupti a. Voluptate, dicta alias! Dolorum nobis inventore
+      adipisci, laboriosam velit unde ipsam excepturi necessitatibus facilis
+      iure saepe voluptatem veniam doloribus aliquid libero quaerat sunt quod
+      voluptas eos blanditiis veritatis nulla odio corporis dolorem? Hic non
+      assumenda quibusdam commodi excepturi aut soluta maxime sit reprehenderit
+      atque, veritatis inventore vero nesciunt nostrum? Repudiandae deserunt qui
+      in numquam temporibus vitae eius! Commodi libero nam facilis sunt numquam
+      suscipit animi, ratione quo voluptatibus necessitatibus. Quo, iure tempora
+    </p>
+  </body>
+</html>

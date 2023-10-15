@@ -1,0 +1,114 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      header {
+        height: 100px;
+        background-color: greenyellow;
+        line-height: 100px;
+        text-align: center;
+        font-size: 30px;
+      }
+      .container {
+        background-color: gray;
+      }
+      dt {
+        /* 粘性定位： 
+              相对于里自己最近的，带有滚动条的祖先元素。
+              开启粘性定位的元素，不会脱离文档流，层级比其他元素高
+        */
+        position: sticky;
+        top: 0;
+        /* z-index,只有在设置了postion，开启定位元素之后，才有层级的变化，才会起作用 */
+        z-index: 1;
+        background-color: skyblue;
+        font-size: 30px;
+      }
+      dd {
+        font-size: 20px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 粘性定位 -->
+    <header>头部</header>
+    <div class="container">
+      <dl>
+        <dt>萧炎</dt>
+        <dd>Lorem ipsum dolor sit.</dd>
+        <dd>Ut nam nulla doloremque.</dd>
+        <dd>Earum unde nostrum molestiae.</dd>
+        <dd>Delectus quisquam expedita reprehenderit!</dd>
+        <dd>Quasi impedit maxime minima!</dd>
+        <dd>Itaque, quo. Rerum, corporis?</dd>
+      </dl>
+      <dl>
+        <dt>小医仙</dt>
+        <dd>Lorem ipsum dolor sit.</dd>
+        <dd>Ut nam nulla doloremque.</dd>
+        <dd>Earum unde nostrum molestiae.</dd>
+        <dd>Delectus quisquam expedita reprehenderit!</dd>
+        <dd>Quasi impedit maxime minima!</dd>
+        <dd>Itaque, quo. Rerum, corporis?</dd>
+      </dl>
+      <dl>
+        <dt>美杜莎</dt>
+        <dd>Lorem ipsum dolor sit.</dd>
+        <dd>Ut nam nulla doloremque.</dd>
+        <dd>Earum unde nostrum molestiae.</dd>
+        <dd>Delectus quisquam expedita reprehenderit!</dd>
+        <dd>Quasi impedit maxime minima!</dd>
+        <dd>Itaque, quo. Rerum, corporis?</dd>
+      </dl>
+      <dl>
+        <dt>采菱3</dt>
+        <dd>Lorem ipsum dolor sit.</dd>
+        <dd>Ut nam nulla doloremque.</dd>
+        <dd>Earum unde nostrum molestiae.</dd>
+        <dd>Delectus quisquam expedita reprehenderit!</dd>
+        <dd>Quasi impedit maxime minima!</dd>
+        <dd>Itaque, quo. Rerum, corporis?</dd>
+      </dl>
+      <dl>
+        <dt>采菱4</dt>
+        <dd>Lorem ipsum dolor sit.</dd>
+        <dd>Ut nam nulla doloremque.</dd>
+        <dd>Earum unde nostrum molestiae.</dd>
+        <dd>Delectus quisquam expedita reprehenderit!</dd>
+        <dd>Quasi impedit maxime minima!</dd>
+        <dd>Itaque, quo. Rerum, corporis?</dd>
+      </dl>
+      <dl>
+        <dt>采菱5</dt>
+        <dd>Lorem ipsum dolor sit.</dd>
+        <dd>Ut nam nulla doloremque.</dd>
+        <dd>Earum unde nostrum molestiae.</dd>
+        <dd>Delectus quisquam expedita reprehenderit!</dd>
+        <dd>Quasi impedit maxime minima!</dd>
+        <dd>Itaque, quo. Rerum, corporis?</dd>
+      </dl>
+      <dl>
+        <dt>采菱</dt>
+        <dd>Lorem ipsum dolor sit.</dd>
+        <dd>Ut nam nulla doloremque.</dd>
+        <dd>Earum unde nostrum molestiae.</dd>
+        <dd>Delectus quisquam expedita reprehenderit!</dd>
+        <dd>Quasi impedit maxime minima!</dd>
+        <dd>Itaque, quo. Rerum, corporis?</dd>
+      </dl>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .outer {
+        width: 500px;
+        /* 方案一： 问题解决1： 解决了高度坍塌的问题。但是，没有解决浮动元素对身后普通元素的影响问题（box4, box4藏在了box1的后面，box4里面的文字被甩出来，环绕） */
+        height: 122px;
+
+        background-color: aliceblue;
+        border: 1px solid tomato;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: greenyellow;
+        border: 1px solid turquoise;
+        margin: 10px;
+      }
+      .box1, .box2, .box3 {
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="box box1">盒子1</div>
+      <div class="box box2">盒子2</div>
+      <div class="box box3">盒子3</div>
+      <div class="box box4">盒子4</div>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita rerum
+      autem repellat eum. Ipsum labore possimus deleniti, quaerat doloribus
+      magni optio quasi nostrum quidem quibusdam odit non sit id illum
+      dignissimos corrupti a. Voluptate, dicta alias! Dolorum nobis inventore
+      adipisci, laboriosam velit unde ipsam excepturi necessitatibus facilis
+      iure saepe voluptatem veniam doloribus aliquid libero quaerat sunt quod
+      voluptas eos blanditiis veritatis nulla odio corporis dolorem? Hic non
+      assumenda quibusdam commodi excepturi aut soluta maxime sit reprehenderit
+      atque, veritatis inventore vero nesciunt nostrum? Repudiandae deserunt qui
+      in numquam temporibus vitae eius! Commodi libero nam facilis sunt numquam
+      suscipit animi, ratione quo voluptatibus necessitatibus. Quo, iure tempora
+    </p>
+  </body>
+</html>

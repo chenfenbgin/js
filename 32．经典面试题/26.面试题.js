@@ -690,7 +690,7 @@ for (const item of obj) {
 // 48、line-height写法
 // line-height行高和文字大小尽量不要一样
 // line-height值： 1,像素  2,normal  3,数值（没有单位--相当于倍数）  4,百分比
-// line-height: 1.5 相当于font-size的1.5倍（比较常用）
+// line-height: 1.5 相当于font-siz e的1.5倍（比较常用）
 // 一行中，如果有两个行高，行高值大的生效（可以使用倍数），使用line-height可以居中，但是并不是真正一样的居中，看着没什么区别，跟字体有关系，偏下一点
 
 
