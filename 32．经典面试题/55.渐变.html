@@ -1,0 +1,53 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .outer {
+        height: 300px;
+        border: 1px solid #ccc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .inner {
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+        margin: 10px;
+      }
+      .inner1 {
+        background-image: linear-gradient(purple, green);
+      }
+      .inner2 {
+        background-image: linear-gradient(purple, pink, red);
+      }
+      .inner3 {
+        background-image: linear-gradient(to right, purple, pink, red);
+      }
+      .inner4 {
+        background-image: linear-gradient(45deg, purple, pink, red);
+      }
+      /* 改变渐变的区间 */
+      .inner5 {
+        background-image: linear-gradient( purple 0px, pink 100px, red 200px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="inner inner1"></div>
+      <div class="inner inner2"></div>
+      <div class="inner inner3"></div>
+      <div class="inner inner4"></div>
+      <div class="inner inner5"></div>
+    </div>
+  </body>
+</html>

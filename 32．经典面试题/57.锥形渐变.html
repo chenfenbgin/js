@@ -1,0 +1,56 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .outer {
+      border: 1px solid black;
+    }
+    .outer::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .inner {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 1px solid black;
+      float: left;
+      margin: 50px 30px;
+    }
+
+    .inner1 {
+      background-image: conic-gradient(blue, purple, pink);
+    }
+    .inner2 {
+      background-image: conic-gradient(from 90deg,blue, purple, pink);
+    }
+    .inner3 {
+      background-image: conic-gradient(at 200px 100px,blue, purple, pink);
+    }
+    .inner4 {
+      background-image: conic-gradient(blue 90deg, purple 180deg , pink 270deg);
+    }
+    .inner5 {
+      background-image: conic-gradient(#f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+    }
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <div class="inner inner1"></div>
+    <div class="inner inner2"></div>
+    <div class="inner inner3"></div>
+    <div class="inner inner4"></div>
+    <div class="inner inner5"></div>
+  </div>
+</body>
+</html>

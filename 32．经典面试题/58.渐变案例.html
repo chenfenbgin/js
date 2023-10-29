@@ -1,0 +1,81 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .outer {
+        height: 200px;
+        border: 1px solid black;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .outer .one {
+        width: 1000px;
+        height: 160px;
+        background-image: linear-gradient(to right, navy, purple, pink);
+
+        text-align: center;
+        line-height: 160px;
+
+        color: transparent;
+        font-size: 100px;
+        font-weight: bold;
+        letter-spacing: 20px;
+
+        /* 背景裁剪 */
+        -webkit-background-clip: text;
+      }
+      .outer .two {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-image: radial-gradient(at 60px 60px, white, black);
+      }
+
+      .outer3 {
+        height: 400px;
+      }
+      .outer .three {
+        width: 280px;
+        height: 350px;
+        /* border: 1px solid turquoise; */
+        background-image: url(./images/1.jpg);
+        position: relative;
+      }
+      .outer .three::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 10px;
+        top: 20px;
+        border-radius: 20px;
+        background-image: conic-gradient(navy, purple, pink ,purple, navy);
+        z-index: -1;
+        /* 虚化 */
+        filter: blur(20px)
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="one">渐变的文字</div>
+    </div>
+    <div class="outer">
+      <div class="two"></div>
+    </div>
+    <div class="outer outer3">
+      <div class="three"></div>
+    </div>
+  </body>
+</html>

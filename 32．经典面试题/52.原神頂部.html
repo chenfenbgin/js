@@ -1,0 +1,81 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .header-wrapper {
+        /* 固定定位 */
+        position: fixed;
+        top: 0;
+
+        margin: 0 auto;
+        height: 66px;
+        width: 100%;
+        background-color: rgba(17, 17, 17, 0.75);
+        /* 阴影 上 右 下 左 */
+        box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.5);
+      }
+      .nav-list div {
+        /* 产生高度坍塌前提： 1.父元素没有设置高度，2.父元素自身如果开启绝对定位、固定定位、或者浮动，不会产生高度坍塌 */
+        /* 所有子元素都开启浮动，父元素要清楚浮动.但是，如果父元素开启绝对定位，可以不用清楚浮动 */
+        float: left;
+        height: 66px;
+        line-height: 66px;
+        margin: auto 20px;
+        color: #ccc;
+        cursor: pointer;
+        font-size: 17px;
+      }
+      .nav-list::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .nav-list .active {
+        color: #fff;
+        /* 前两个是偏移量，这个属性是可以叠加的 */
+        text-shadow: 0 0 10px #69e0ff, 0 0 10px #69e0ff, 0 0 10px #69e0ff;
+      
+
+      }
+      .nav-line {
+        position: fixed;
+        top: 0;
+        width: 75px;
+        height: 5px;
+        background-color: #69e0ff;
+      }
+
+      .nav-list div:hover {
+        text-shadow: 0 0 10px #69e0ff, 0 0 10px #69e0ff, 0 0 10px #69e0ff;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <div class="nav-list">
+        <div class="active">新 聞</div>
+        <div>角 色</div>
+        <div>世 界</div>
+        <div>漫 画</div>
+        <div>新 聞</div>
+        <div>角 色</div>
+        <div>世 界</div>
+        <div>漫 画</div>
+      </div>
+      <div class="nav-line"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .outer {
+      border: 1px solid black;
+    }
+    .outer::after{
+      content: '';
+      display: block;
+      clear:both;
+    }
+    .inner {
+      width: 300px;
+      height: 200px;
+      border: 1px solid turquoise;
+      float: left;
+      margin: 50px 30px;
+    }
+    .inner1 {
+      background-image: radial-gradient(purple, pink);
+    }
+    .inner2 {
+      /* background-image: radial-gradient(at left, purple, pink); */
+      background-image: radial-gradient(at left top, blue, purple, pink);
+    }
+    .inner3 {
+      background-image: radial-gradient(at 20px  20px, blue, purple, pink);
+    }
+    .inner4 {
+      background-image: radial-gradient(circle at 150px  100px, blue, purple, pink);
+    }
+    .inner5 {
+      background-image: repeating-radial-gradient(circle, blue 50px, purple 100px, pink 150px);
+    }
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <div class="inner inner1">默认渐变，中心渐变到四周</div>
+    <div class="inner inner2">通过关键字，调整渐变的中心点</div>
+    <div class="inner inner3">通过具体像素点，调整渐变的中心点</div>
+    <div class="inner inner4">渐变的形态，以及圆心所在的位置</div>
+    <div class="inner inner5">设定了渐变的区间，同时有一个重复</div>
+  </div>
+</body>
+</html>

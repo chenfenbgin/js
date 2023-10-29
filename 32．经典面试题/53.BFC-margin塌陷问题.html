@@ -1,0 +1,62 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .outer {
+        width: 500px;
+        background-color: gray;
+        /* 2. 解决：开启BFC */
+        /* float: left; */
+        /* display: inline-block;*/
+        /* overflow: auto;  */
+        /* display: flow-root; (推荐使用)*/
+        position: absolute;
+      }
+      .inner {
+        width: 100px;
+        height: 100px;
+        /* 1. 此時產生margin塌陷问题，box1最上面的margin-top会被父元素抢走 */
+        margin: 20px;
+      }
+      .box1 {
+        background-color: coral;
+      }
+      .box2 {
+        background-color: greenyellow;
+      }
+      .box3 {
+        background-color: turquoise;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    常规流： 块盒出现的问题（这是由于浏览器渲染规则绝对的）：
+            1.垂直方向上相邻的元素，margin会合并
+            2.父子关系的情况下，margin可能会塌陷
+            3.父子关系的情况下，肯能高度坍塌
+            4.兄弟关系的情况下，正常元素可能会被浮动元素覆盖（正常元素在浮动元素之后）
+
+    BFC: 单独的一块渲染规则空间。格局内部与外部的联系，内部渲染不会影响到外部。
+    BFC解决的问题：（也是上面出现的问题）
+   -->
+
+    <div class="outer">
+      <div class="inner box1"></div>
+      <div class="inner box2"></div>
+      <div class="inner box3"></div>
+    </div>
+  </body>
+</html>
