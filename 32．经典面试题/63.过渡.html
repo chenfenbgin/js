@@ -1,0 +1,36 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: tomato;
+      margin: 0 auto;
+      margin-top: 300px;
+      /* 哪个属性需要过渡 */
+      /* transition-property: width, height; */
+      /* 所有能过渡的属性 */
+      transition-property: all;
+      /* 过渡需要的总时间 */
+      transition-duration: 2s,8s;
+    }
+    .box:hover {
+      cursor: pointer;
+      width: 400px;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>

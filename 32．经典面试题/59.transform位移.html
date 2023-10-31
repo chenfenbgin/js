@@ -1,0 +1,45 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .outer {
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        margin: 0 auto;
+        margin-top: 300px;
+        position: relative;
+      }
+      .inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 50px;
+        height: 50px;
+        background-color: tomato;
+        /* translateX 和 translateY不能同时出现 */
+        /* transform: translateX(-100px); */
+        /* transform: translateX(100px); */
+        /* transform: translateY(100px); */
+
+        /* 下面的写法，可以改为transform: translate(100px, 100px) */
+        /* transform: translateX(100px) translateY(100px); */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="inner"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .card {
+        width: 216px;
+        height: 432px;
+        /* border: 1px solid black; */
+        position: relative;
+      }
+      .card img {
+        width: 100%;
+        transition: 0.5s;
+        position: absolute;
+      }
+      .hero {
+        z-index: 1;
+
+      }
+      .cover {
+        z-index: 2;
+        opacity: 0;
+        bottom: 0;
+
+      }
+      .card:hover .hero {
+        transform: perspective(500px) rotateX(30deg);
+        box-shadow: 0 35px 35px  -8px rgba(0, 0, 0, 0.75);
+      }
+      .card:hover .cover {
+        transform:perspective(500px) translate3D(0, -50px, 50px);
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <img class="hero" src="../32．经典面试题/images/hero.jpg" />
+      <img class="cover" src="../32．经典面试题/images/3d-cover.jpg" />
+    </div>
+  </body>
+</html>

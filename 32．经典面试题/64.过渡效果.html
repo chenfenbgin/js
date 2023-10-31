@@ -1,0 +1,96 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .box {
+        width: 420px;
+        height: 250px;
+        border-radius: 20px;
+        position: relative;
+        transition: all 0.6s linear;
+        overflow: hidden;
+      }
+      .image {
+        width: 100%;
+        height: 100%;
+        transform: scale(1.5) rotateZ(20deg);
+        transition: all 0.6s linear;
+      }
+      .box .cover {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        line-height: 250px;
+        font-size: 60px;
+        color: white;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        transition: all 0.6s linear;
+      }
+      .box:hover {
+        cursor: pointer;
+        box-shadow: 0 0 30px black;
+      }
+      .box:hover .cover {
+        background-color: rgba(0, 0, 0, 0);
+        text-shadow: 0 0 5px white;
+        /* 文字变透明 */
+        color: transparent;
+      }
+      .box:hover .image {
+        transform: scale(1) rotateZ(0deg);
+      }
+      .container {
+        width: 1500px;
+        height: 400px;
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <img class="image" src="../32．经典面试题/images/北京.jpg" />
+        <div class="cover">BeiJing</div>
+      </div>
+      <div class="box">
+        <img class="image" src="../32．经典面试题/images/深圳.jpg" />
+        <div class="cover">shenzhen</div>
+      </div>
+      <div class="box">
+        <img class="image" src="../32．经典面试题/images/西藏.jpg" />
+        <div class="cover">xizang</div>
+      </div>
+    </div>
+  </body>
+</html>
