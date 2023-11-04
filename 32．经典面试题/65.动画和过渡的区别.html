@@ -1,0 +1,68 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .outer {
+        width: 1500px;
+        height: 200px;
+        border: 1px solid black;
+        margin: 0 auto;
+        margin-top: 200px;
+      }
+      .inner {
+        width: 100px;
+        height: 100px;
+      }
+      .inner1 {
+        background-color: tomato;
+        transition: all 2s linear;
+      }
+      .outer:hover .inner1 {
+        transform: translateX(1400px);
+      }
+      .inner2 {
+        background-color: skyblue;
+        animation: move 2s linear;
+      }
+      @keyframes move {
+        0% {
+        }
+        30% {
+          background-color: turquoise;
+          border-radius: 50%;
+          box-shadow: 0 0 20px black;
+        }
+        100% {
+          transform: translateX(1400px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+        动画和过渡的区别:
+            1.关于设计思想层面：
+              a.过渡：关注两个状态的柔和变化，更关注的是柔和度（两个位置/状态）
+              b.动画：关注点在于整个状态的变化过程，更关注过程的中间每一帧的操作
+
+            2，过渡不能设置中间位置的变化。动画可以设置中间位置的变化
+            3. 关于触发条件： 
+                  过渡需要触发条件，比如鼠标悬停，js单击；动画不需要触发条件，浏览器加载好就执行，动画执行只执行一次，除非设置
+            4. 关于执行次数： 
+                  过渡只能执行一次，但是事件失效，还会原路返回；
+                  动画可以通过设定次数，来执行的，比如可以设置几次、无限次
+    -->
+    <div class="outer">
+      <div class="inner inner1">过渡</div>
+      <div class="inner inner2">动画</div>
+    </div>
+  </body>
+</html>

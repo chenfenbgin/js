@@ -1,0 +1,50 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .outer {
+        height: 100vh;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* 子元素设置了模糊值，父元素，需要设置对比度 */
+        filter: contrast(30);
+      }
+      .inner {
+        color: #fff;
+        font-size: 100px;
+        letter-spacing: 20px;
+        animation: showNow 2s linear forwards;
+      }
+      @keyframes showNow {
+        from {
+          letter-spacing: -100px;
+          /* 设置模糊值  */
+          filter: blur(10px);
+        }
+        to {
+          letter-spacing: 20px;
+          filter: blur(2px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="inner">重瞳本是无敌路</div>
+    </div>
+  </body>
+</html>

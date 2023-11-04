@@ -1,0 +1,75 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .outer {
+        height: 100vh;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        /* 子元素设置了模糊值，父元素，需要设置对比度 */
+        filter: contrast(30);
+      }
+      .inner {
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        font-size: 100px;
+        letter-spacing: 20px;
+        animation: showNow 8s infinite forwards;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .inner1 {
+        animation-delay: -8s;
+      }
+      .inner2 {
+        animation-delay: -6s;
+      }
+      .inner3 {
+        animation-delay: -4s;
+      }
+      .inner4 {
+        animation-delay: -2s;
+      }
+      @keyframes showNow {
+        0%,
+        10%,
+        100% {
+          opacity: 1;
+          filter: blur(0px);
+        }
+        70%,
+        80% {
+          filter: blur(80px);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="inner inner1">重瞳本是无敌路</div>
+      <div class="inner inner2">何须再借他人骨</div>
+      <div class="inner inner3">三十年河东三十年河西</div>
+      <div class="inner inner4">莫欺少年穷</div>
+    </div>
+  </body>
+</html>
