@@ -1,0 +1,65 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card {
+      position: relative;
+      width: 200px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+     
+
+      /* 3D效果 */
+      perspective: 500px;
+    }
+    .face {
+      position: absolute;
+      transition: all 0.5s;
+      /* 翻转背面隐藏 */
+      backface-visibility: hidden;
+      padding: 10px;
+      border: 2px solid salmon;
+    }
+    img {
+      width: 100px;
+      opacity: .9;
+    }
+    .card:hover .face {
+      transform: rotateY(-180deg);
+    }
+    .back {
+      /* transform: rotateY(-180deg); */
+      backface-visibility: hidden;
+      transition: all 0.5s;
+    }
+    .card:hover .back {
+      transform: rotateY(0deg);
+      backface-visibility: visible;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img class="face" src="../32．经典面试题/images/1.jpg" alt="">
+    <p class="back">
+      <span>狠人大帝</span>
+    </p>
+  </div>
+</body>
+</html>
