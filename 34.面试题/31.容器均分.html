@@ -1,0 +1,35 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+      }
+      .part {
+        /* 方式1： */
+        /* flex-grow: 1; */
+        /* 默认值auto，是内容撑满； flex-basis: 0;永远均分 */
+        /* flex-basis: 0; */
+
+        /* 简写 */
+        flex: 1 0 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="part" style="background-color: aqua">Lorem ipsum dolor sit amspernatur neque aliquam repellat id ipsa commodi sequi, corporis illum rerum, fuga odio, labore incidunt quia pariatur animi soluta aliquid cupiditate?</div>
+      <div class="part" style="background-color: thistle"></div>
+      <div class="part" style="background-color: seagreen"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        background-color: #555;
+      }
+      h1 {
+        color: #fff;
+        letter-spacing: 20px;
+      }
+      h1::before {
+        content: "完美世界";
+        position: absolute;
+        color: black;
+        transform: translate(-29px, 16px) scaleY(0.5) skew(50deg);
+        z-index: -1;
+        /* 模糊效果 */
+        filter: blur(5px);
+        /* 使用遮罩层 */
+        mask-image: linear-gradient(transparent, black);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>完美世界</h1>
+  </body>
+</html>

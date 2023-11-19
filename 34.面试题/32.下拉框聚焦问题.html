@@ -1,0 +1,47 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .text {
+        width: 400px;
+      }
+      .select {
+        width: 362px;
+        display: flex;
+        flex-direction: column;
+        line-height: 30px;
+        color: #333;
+        border: 1px solid turquoise;
+        margin-top: -1px;
+        padding: 0 20px;
+        transform-origin: center top;
+        z-index: -1;
+        transform: scaleY(0);
+        transition: 1s;
+      }
+      .text-select .text:focus ~ .select {
+        /* transform:效率非常高 */
+        transform: scaleY(1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="text-select">
+      <input type="text" class="text" />
+      <div class="select">
+        <span>Lorem ipsum dolor sit.</span>
+        <span>Repellat ipsa obcaecati cupiditate?</span>
+        <span>Optio tempora totam nemo?</span>
+        <span>Laboriosam necessitatibus asperiores nostrum.</span>
+        <span>Tenetur nesciunt sunt quas!</span>
+      </div>
+    </div>
+  </body>
+</html>
