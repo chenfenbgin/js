@@ -1,0 +1,52 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <canvas id="c1" width="600" height="400">
+    当前浏览器不支持canvas,请下载最新的浏览器
+  </canvas>
+
+  <script>
+    // 1. 找到画布
+    let c1 = document.querySelector("#c1");
+    // 判断浏览器时候有getContext
+    if (!c1.getContext) {
+      console.log("当前浏览器不支持canvas, 请下载最新的浏览器");
+    }
+
+    // 2. 获取画笔，上下文对象
+    let ctx = c1.getContext("2d");
+    console.log("画笔： ", ctx);
+
+    // 3. 绘制图形
+    // 3.2 路径绘制矩形：strokeRect(位置x, 位置y, 宽度, 高度)
+    ctx.strokeRect(100, 100, 200, 100);
+    ctx.fillRect(200, 150, 200, 100);
+    // 清除矩形，从0， 0开始清除
+    // ctx.clearRect(0, 0, c1.clientWidth, c1.clientHeight);
+
+    // 缓慢清除
+    let height = 0;
+    let timer = setInterval(() => {
+      height++;
+      ctx.clearRect(0, 0, c1.clientWidth, height);
+      if (height > c1.clientHeight) clearInterval(timer);
+    }, 1);
+
+    // 注： strokeRect等都可以拆开写
+    //      ctx.rect(100, 100, 200, 100)
+    //      ctx.stroke()
+  </script>
+</body>
+
+</html>

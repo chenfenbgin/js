@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // 1. 创建canvas(画布)
+      const canvas = document.createElement("canvas");
+      // 2. 创建之后，需要添加到body里面
+      canvas.width = 600;
+      canvas.height = 400;
+      document.body.append(canvas);
+      // 3. 获取画笔
+      const context = canvas.getContext("2d");
+
+      // 设置 锥形渐变 角度换算成弧度 -90 * (Math.PI / Math)
+      const gradient = context.createConicGradient(-45 * (Math.PI / 180), 100, 100);
+      // 添加渐变的颜色
+      gradient.addColorStop(0, "red");
+      gradient.addColorStop(1, "green");
+      // 把渐变赋给画笔
+      context.fillStyle = gradient;
+
+      context.fillRect(0, 0, 200, 200);
+    </script>
+  </body>
+</html>

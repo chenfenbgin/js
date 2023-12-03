@@ -1,0 +1,42 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // 1. 创建canvas(画布)
+      const canvas = document.createElement("canvas");
+      // 2. 创建之后，需要添加到body里面
+      canvas.width = 600;
+      canvas.height = 400;
+      document.body.append(canvas);
+      // 3. 获取画笔
+      const context = canvas.getContext("2d");
+      // 4. 画折线
+      // 4.1 起点
+      context.moveTo(100, 100);
+      // 4.2 使用lineTo依次经过转折点
+      context.lineTo(200, 200);
+      context.lineTo(300, 100);
+      context.lineTo(400, 200);
+      // 设置线条的宽度, 这个设置的是全局的
+      context.lineWidth = 10;
+      // 设置线条的颜色
+      context.strokeStyle = '#f0f'
+      // 4.3 使用stroke画图
+      context.stroke();
+
+      // 4.4 如果有新的路径，也要调用 stroke才有图像
+      context.lineTo(500, 300);
+      context.stroke();
+    </script>
+  </body>
+</html>

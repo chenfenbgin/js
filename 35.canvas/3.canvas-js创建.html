@@ -1,0 +1,33 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 注意： canvas元素为了能正常显示里面的图形，需要使用属性来控制宽高，不要使用css的方式 */
+      /* canvas {
+        width: 400px;
+        height: 400px;
+      } */
+    </style>
+  </head>
+  <body>
+    <script>
+      // 1. 创建canvas(画布)
+      const canvas = document.createElement("canvas");
+      // 设置宽高
+      canvas.width = 600;
+      canvas.height = 400;
+      // 2. 创建之后，需要添加到body里面
+      document.body.append(canvas);
+      // 3. 获取画笔
+      const context = canvas.getContext("2d");
+      context.fillRect(100, 100, 150, 100);
+    </script>
+  </body>
+</html>
