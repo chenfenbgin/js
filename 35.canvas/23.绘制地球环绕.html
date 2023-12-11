@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      canvas {
+        background-color: #666;
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const canvas = document.createElement("canvas");
+      canvas.width = 800;
+      canvas.height = 600;
+      document.body.append(canvas);
+      const context = canvas.getContext("2d");
+
+      // 准备一个地球旋转的角度
+      let earthAngle = 0;
+      // 月球旋转的角度
+      let moonAngle = 0
+      function loop() {
+        // 2.3保留源开始的状态
+        context.save()
+        // 清除之前的画布
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        // 1.画太阳
+        // 把圆心放在canvas的中心
+        context.beginPath();
+        context.arc(400, 300, 100, 0, 2 * Math.PI);
+        context.fillStyle = "yellow";
+        context.shadowColor = "yellow";
+        context.shadowBlur = 30;
+        context.fill();
+        context.closePath();
+
+        // 2.画地球
+        context.beginPath();
+        // 2.1这里就不能这么写了，需要吧canvas的原点移动到正中心
+        context.translate(400, 300)
+        // 2.2让画笔旋转一个角度
+        context.rotate((earthAngle += 1/3.65) * Math.PI / 180)
+        context.rotate(0 * Math.PI / 180)
+
+        // 为了后面画月亮的动画，要把原点变成和地球中心完全一致
+        context.translate(200, 0)
+        context.arc(0, 0, 20, 0, 2 * Math.PI);
+        context.fillStyle = "blue";
+        context.shadowBlur = 0;
+        context.fill();
+        context.closePath();
+
+        // 3.画月亮
+        context.beginPath();
+        context.fillStyle = '#eee'
+        context.rotate((moonAngle += 1) * Math.PI / 180)
+
+        context.arc(40, 0, 6, 0, 2 * Math.PI);
+        context.fill();
+        context.closePath();
+
+        // 2.3恢复状态
+        context.restore()
+        requestAnimationFrame(loop);
+      }
+      requestAnimationFrame(loop);
+    </script>
+  </body>
+</html>

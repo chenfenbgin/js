@@ -1,0 +1,54 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      canvas {
+        background-color: #eee;
+      }
+
+    </style>
+  </head>
+  <body>
+    <script>
+      const canvas = document.createElement("canvas");
+      canvas.width = 720;
+      canvas.height = 400;
+      document.body.append(canvas);
+      const context = canvas.getContext("2d");
+
+      // 画一条辅助线
+      context.strokeStyle = 'skyblue';
+      context.moveTo(360, 0);
+      context.lineTo(360, 400)
+      context.stroke()
+
+      // 文字的方向控制
+      // context.direction = "ltr"; // 默认从左到右
+      context.direction = "rtl"; // 默认从左到右
+
+      // 修改文本的对齐方式， textAlign 属性是以起点为对齐的位置
+      // context.textAlign = 'left'
+      // context.textAlign = 'right'
+      // context.textAlign = 'center'
+      // context.textAlign = 'start' // start以direction的开始方向为方向
+      context.textAlign = 'end' // start以direction的开始方向为方向
+
+      context.font = "italic 700 30px Arial";
+      const graident = context.createLinearGradient(0, 0, 600, 0);
+      graident.addColorStop(0, "red");
+      graident.addColorStop(0.25, "yellow");
+      graident.addColorStop(0.5, "orange");
+      graident.addColorStop(0.75, "hotpink");
+      graident.addColorStop(1, "purple");
+      context.fillStyle = graident;
+      context.fillText("www.xiaoyixian", 200, 100);
+    </script>
+  </body>
+</html>

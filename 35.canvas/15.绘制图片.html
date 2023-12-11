@@ -2,10 +2,6 @@
  * @des: ''
  * @author: fengbin.chen
 -->
-<!--
- * @des: ''
- * @author: fengbin.chen
--->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,24 +12,22 @@
   </head>
   <body>
     <script>
-      // 1. 创建canvas(画布)
       const canvas = document.createElement("canvas");
-      // 2. 创建之后，需要添加到body里面
       canvas.width = 720;
       canvas.height = 1280;
       document.body.append(canvas);
-      // 3. 获取画笔
       const context = canvas.getContext("2d");
-      let image = new Image();
-      image.src = './images/qingyi.png';
 
-      image.onload = function() {
-        // 创建重复元图像对象
-        let p = context.createPattern(image, 'repeat')
-        context.fillStyle = p;
-
-        context.fillRect(0, 0, 720, 1280)
-      }
+      // 使用drawImage绘制图片
+      // 1. 准备一个图片源
+      let img = new Image();
+      img.src = "./images/huolinger.jpg";
+      img.onload = function () {
+        // 2. 调用drawImage画图片
+        // 传入绘制的坐标，按原有比例的大小绘制
+        console.log('绘制');
+        context.drawImage(img, 50, 50);
+      };
     </script>
   </body>
 </html>

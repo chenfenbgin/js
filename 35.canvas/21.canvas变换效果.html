@@ -1,0 +1,36 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      canvas {
+        background-color: #0d0;
+        display: inline-block;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const canvas = document.createElement("canvas");
+      canvas.width = 720;
+      canvas.height = 600;
+      document.body.append(canvas);
+      const context = canvas.getContext("2d");
+
+      // canvas的位移api, 位置的变换，都是基于原点的变换的，context默认的原点是0， 0
+      context.translate(100, 100);
+      // 绘制一个方形
+      context.fillRect(0, 0, 100, 100);
+
+      context.arc(-50, -50, 50, 0, 2 * Math.PI);
+      context.stroke()
+    </script>
+  </body>
+</html>

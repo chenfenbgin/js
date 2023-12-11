@@ -1,0 +1,39 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      const canvas = document.createElement("canvas");
+      canvas.width = 720;
+      canvas.height = 1280;
+      document.body.append(canvas);
+      const context = canvas.getContext("2d");
+      // 使用font属性，修改绘制的文字的大小
+      context.font = "italic 700 30px Arial";
+      // 使用fillStyle 和 strokeStyle
+      // fillStyle 对应的是 fill 相关方法的颜色, fill(), fillRect()...
+      // strokeStyle 对应的是 stroke 相关方法的颜色, stroke(), strokeText()...
+      
+      // 渐变
+      const graident = context.createLinearGradient(0, 0, 600, 0);
+      graident.addColorStop(0, "red");
+      graident.addColorStop(0.25, "yellow");
+      graident.addColorStop(0.5, "orange");
+      graident.addColorStop(0.75, "hotpink");
+      graident.addColorStop(1, "purple");
+      context.fillStyle = graident;
+      context.strokeStyle = graident;
+      context.fillText("www.xiaoyixian", 200, 100);
+      context.strokeText("www.xiaoyixian", 200, 300);
+    </script>
+  </body>
+</html>

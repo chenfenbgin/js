@@ -1,0 +1,35 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      const canvas = document.createElement("canvas");
+      canvas.width = 720;
+      canvas.height = 600;
+      document.body.append(canvas);
+      const context = canvas.getContext("2d");
+
+      // 滤镜
+      // context.filter = 'none'; // 默认值， 没有滤镜
+      // context.filter = 'blur(2px)' // 模糊
+      // context.filter = 'brightness(50%)' // 亮度调节
+      context.filter = 'contrast(10%)' // 对比度
+
+      let img = new Image();
+      img.src = "./images/huolinger.jpg";
+      img.onload = function () {
+        console.log('绘制');
+        context.drawImage(img, 200, 200, 200, 200, 200, 200, 200, 200);
+      };
+    </script>
+  </body>
+</html>

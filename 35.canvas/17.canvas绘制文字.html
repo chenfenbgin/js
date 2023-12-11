@@ -1,0 +1,29 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      const canvas = document.createElement("canvas");
+      canvas.width = 720;
+      canvas.height = 1280;
+      document.body.append(canvas);
+      const context = canvas.getContext("2d");
+      // 使用font属性，修改绘制的文字的大小
+      context.font = "700 30px Araine";
+      // 方式一：  填充： context.fillText(context, x, y, [maxWidth])
+      // 注意：现在文字的绘制坐标，和之前的图形都不一样，之前的图形，都是以左上角为初始坐标，文字，是左下角为初始坐标
+      context.fillText("www.xiaoyixian", 0, 30);
+      // 方式一： 描边：context.strokeText(context, x, y, [maxWidth])
+      context.strokeText("www.xiaoyixian", 0, 100);
+    </script>
+  </body>
+</html>

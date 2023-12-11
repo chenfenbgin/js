@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      const canvas = document.createElement("canvas");
+      canvas.width = 720;
+      canvas.height = 600;
+      document.body.append(canvas);
+      const context = canvas.getContext("2d");
+      context.fillStyle = "skyblue";
+
+      let x = 0;
+      function loop() {
+        x += 1;
+        // 绘制方形, 绘制新图形之前，需要把之前的图形先清除
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.fillRect(x, 100, 100, 100);
+        requestAnimationFrame(loop);
+      }
+      requestAnimationFrame(loop);
+    </script>
+  </body>
+</html>
