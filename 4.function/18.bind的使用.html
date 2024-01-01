@@ -1,3 +1,7 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,18 +16,18 @@
   <script>
     //bind call
     function show() {
-      console.log(this.name);
+      console.log('this.name======',this.name);
     }
     //show.apply({name: '天选之子'}) //这是会立即执行的，但是bind不会，需要加上()
-    show.bind({ name: "陈秀" })();
+    show.bind({ name: "陈天地" })();
 
     let a = function () {};
     let b = a; //传址
     console.log(a instanceof Object); //true， 函数是对象类型
-    console.log(a === b); //true
+    console.log('传址，相等：', a === b); //true
     //使用bind，就不相等了
     b = a.bind();
-    console.log(a === b); //false
+    console.log('如果使用了bind，就不相等了：', a === b); //false
 
     console.log("----------------");
     //例子

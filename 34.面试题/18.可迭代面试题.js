@@ -6,6 +6,7 @@
 // var [a, b] = { a: 1, b: 2 };
 
 Object.prototype[Symbol.iterator] = function () {
+  console.log('Object.values(this)===', this, Object.values(this));
   return Object.values(this)[Symbol.iterator]();
 };
 

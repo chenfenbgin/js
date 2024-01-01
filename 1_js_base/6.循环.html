@@ -1,3 +1,7 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,23 +12,20 @@
   </head>
   <body>
     <script>
-      function table(options = { tr: 5, td: 3 }) {
+      function drawTable(options = {tr: 5, td: 3}) {
         document.write(`<table border="1" width="100%">`);
-        let tr = options.tr;
-        while (options.tr-- != 0) {
-          // document.write(`<tr><td>${tr}</td></tr>`);
-          let td = options.td;
-          document.write(`<tr>`);
-          while (td-- != 0) {
-            document.write(`<td>${td}</td>`);
+          let tr = options.tr;
+          while(tr-- !== 0) {
+            let td = options.td;
+            document.write(`<tr>`);
+            while(td-- !== 0){
+              document.write(`<td>${td}</td>`);
+            }
+            document.write(`<tr>`);
           }
-
-          document.write(`</tr>`);
-        }
-        document.write(`</table>`);
+        document.write(`</table>`)
       }
-
-      table({ tr: 10, td: 10 });
+      drawTable({ tr: 10, td: 10 });
     </script>
   </body>
 </html>

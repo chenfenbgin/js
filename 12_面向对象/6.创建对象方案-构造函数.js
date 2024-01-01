@@ -1,3 +1,7 @@
+/*
+ * @des: ''
+ * @author: fengbin.chen
+ */
 function person(name, age) {
   // this 是指向我们创建出来的对象的
   this.name = name;
@@ -8,8 +12,8 @@ function person(name, age) {
 }
 
 var p1 = new person("张三", 23);
-var p2 = new person("张三", 23);
+var p2 = new person("李四", 23);
 console.log(p1);
 
-console.log("---");
+console.log("---", p1.eating(), p2.eating());
 console.log(p1.eating === p2.eating); // false

@@ -1,3 +1,7 @@
+/*
+ * @des: ''
+ * @author: fengbin.chen
+ */
 // 1.状态的设计
 const PROMISE_STATE_PENDING = "pending";
 const PROMISE_STATE_FULFILED = "fulfiled";
@@ -14,7 +18,7 @@ class MyPromise {
         this.status = PROMISE_STATE_FULFILED;
         queueMicrotask(() => {
           this.value = value;
-          console.log("resolve被调用了");
+          console.log("resolve被调用了", this.value);
           // 我们需要执行then传进来的第一个函数
           this.onfulfilled(this.value);
         });
@@ -25,7 +29,7 @@ class MyPromise {
         this.status = PROMISE_STATE_REJECTED;
         queueMicrotask(() => {
           this.reason = reason;
-          console.log("reject被调用了");
+          console.log("reject被调用了", this.reason);
           // 我们需要执行then传进来的第二个函数
           this.onrejected(this.reason);
         });
@@ -54,5 +58,13 @@ promise.then(
   },
   (err) => {
     console.log("err===", err);
+  }
+);
+promise.then(
+  (res) => {
+    console.log("res2:----", res);
+  },
+  (err) => {
+    console.log("err2===", err);
   }
 );

@@ -2,6 +2,10 @@
  * @des: ''
  * @author: fengbin.chen
 -->
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,9 +41,9 @@
       console.log("Boolean([])", Boolean([])); //true
       
       // 因为引用类型， 跟上面的比较是有区别的。{}也会执行
-      if ([]) console.log("执行"); 
-      if ({}) console.log("执行1"); 
-      if ('') console.log("执行2"); 
+      if ([]) console.log("执行"); // 执行
+      if ({}) console.log("执行1"); // 执行
+      if ('') console.log("执行2"); // 不执行
 
       //总结：  数值类型：除了0之外都是true
       //       字符类型：除了空字符串外都为真；引用类型数组跟对象都为真

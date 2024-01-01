@@ -15,10 +15,12 @@
     <span id="msg"></span>
 
     <script>
+      console.log('input节点: ', document.querySelectorAll('[name="password"]'));
       // 找到name=password的标签，加上keyup事件
       document
         .querySelector("[name='password']")
         .addEventListener("keyup", function () {
+          console.log('this.....', this); // this指向input标签
           // 获取当前输入字符串的长度
           let length = this.value.length;
           let span = document.querySelector("#msg");

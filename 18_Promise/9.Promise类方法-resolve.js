@@ -2,6 +2,10 @@
  * @des: ''
  * @author: fengbin.chen
  */
+/*
+ * @des: ''
+ * @author: fengbin.chen
+ */
 // 类方法Promise.resolve:
 // 将一个对象转成Promise
 
@@ -15,6 +19,7 @@ console.log('1. wwwwwwwwww')
 // 2.传入Promise
 const promise3 = Promise.resolve(
   new Promise((resolve, reject) => {
+    console.log('promise3...');
     resolve(99999999);
   })
 );

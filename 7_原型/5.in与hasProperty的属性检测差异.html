@@ -20,6 +20,7 @@
     console.log(a.hasOwnProperty('name'));
     // 我们使用for-ofJ就有
     for (const key in a) {
+      console.log('key====', key);
       if (a.hasOwnProperty.call(a, key)) {
         console.log(a);        
       }

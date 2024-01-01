@@ -72,6 +72,7 @@ function side(arr) {
 }
 function a(a, b, c = 3) {
   c = 10;
+  console.log('arguments---', arguments);
   side(arguments); // 1 1 10
   return a + b + c; // 12
 }
@@ -224,7 +225,7 @@ console.log((foo.bar, foo.bar)());
 // 20 20 10 10
 // 1）第一问 foo.bar(), foo调用，this指向foo , 此时的 this 指的是foo，输出20
 // 2) 第二问 (foo.bar)(), 给表达式加了括号，而括号的作用是改变表达式的运算顺序，而在这里加与不加括号并无影响；相当于foo.bar(),输出20
-// 3）第三问 (foo.bar=foo.bar)(), 所以这里的this指代的是window,输出104）
+// 3）第三问 (foo.bar=foo.bar)(), 所以这里的this指代的是window,输出10）
 // 4) 第四问 (foo.bar,foo.bar)(), 逗号表达式，求解过程是：先计算表达式1的值，再计算表达式2的值，……一直计算到表达式n的值。最后整个逗号表达式的值是表达式n的值。逗号运算符的返回值是最后一个表达式的值。
 //    经过赋值，运算符运算后，都是纯粹的函数，不是对象方法的引用。所以函数指向的this都是windows的。
 
@@ -254,6 +255,7 @@ obj3[Symbol.iterator] = function* () {
     yield value;
   }
 };
+console.log('obj3: ', [...obj3]); // [1, 2, 3]
 console.log("18=====================");
 
 // 题目19: 完成一个safeGet函数，可以安全的获取无限多层次的数据

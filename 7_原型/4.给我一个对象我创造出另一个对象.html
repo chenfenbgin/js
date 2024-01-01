@@ -18,6 +18,7 @@
     let hd = new User("张三");
     console.log('hd....', hd);
     function createByObject(obj, ...args) {
+      console.log('args........', args); // ['陈世美']
       const constructor = Object.getPrototypeOf(obj).constructor;
       console.log(constructor, constructor === User);
       return new constructor(...args);

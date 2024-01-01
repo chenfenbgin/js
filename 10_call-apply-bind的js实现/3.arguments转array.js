@@ -1,3 +1,7 @@
+/*
+ * @des: ''
+ * @author: fengbin.chen
+ */
 // 箭头函数中是没有arguments的
 function foo(num1, num2) {
   console.log("arguments=", arguments); //arguments= [Arguments] { '0': 1, '1': 2, '2': 3, '3': 4 }
@@ -36,4 +40,4 @@ Array.prototype.nsslice = function (start, end) {
   return newarr;
 };
 var newArr1 = Array.prototype.nsslice.call(["aaa", "bbb", "ccc", "ddd"], 1, 3);
-console.log(newArr1);
+console.log(newArr1); // ['bbb', 'ccc']

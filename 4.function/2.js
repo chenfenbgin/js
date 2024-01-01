@@ -87,7 +87,6 @@ function toTreeAndMap(data) { //递归树算法 将pid-id的数据库返回的js
       }
   });
 
-console.log('val..........', val);
   return {
       treeData:val, //树结构json数据 可以渲染html
       map    //索引数据 方便通过ID查找所有子节点ID

@@ -1,0 +1,114 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var data = [
+        {
+          //模拟数据库接口返回的 分类数据
+          status: 1,
+          _id: "5b9a68538f041546600439e7",
+          title: "技术团队",
+          describe: "这是一个技术团队",
+          keywords: "技术团队",
+          pid: "0",
+          addTime: "2018-01-01T00:00:00.000Z",
+        },
+        {
+          status: 1,
+          _id: "5b9a696c3e7dc24660bd9b7e",
+          title: "数码",
+          describe: "这是数码",
+          keywords: "数码",
+          pid: "0",
+          addTime: "2018-01-01T00:00:00.000Z",
+        },
+        {
+          status: 1,
+          _id: "5b9a69a63e7dc24660bd9b7f",
+          title: "前端开发1",
+          describe: "这是前端开发",
+          keywords: "前端",
+          pid: "5b9a68538f041546600439e7",
+          addTime: "2018-01-01T00:00:00.000Z",
+        },
+        {
+          status: 1,
+          _id: "5b9a69d83e7dc24660bd9b80",
+          title: "后端开发",
+          describe: "这是后端开发",
+          keywords: "后端",
+          pid: "5b9a68538f041546600439e7",
+          addTime: "2018-01-01T00:00:00.000Z",
+        },
+        {
+          status: 1,
+          _id: "5b9a69fb3e7dc24660bd9b81",
+          title: "iphone",
+          describe: "这是iphone",
+          keywords: "iphone",
+          pid: "5b9a696c3e7dc24660bd9b7e",
+          addTime: "2018-01-01T00:00:00.000Z",
+        },
+        {
+          status: 1,
+          _id: "5b9a6a173e7dc24660bd9b82",
+          title: "华为",
+          describe: "这是华为",
+          keywords: "华为",
+          pid: "5b9a696c3e7dc24660bd9b7e",
+          addTime: "2018-01-01T00:00:00.000Z",
+        },
+        {
+          status: 1,
+          _id: "5b9a79f13e7dc24660bd9b83",
+          title: "iphone6s",
+          describe: "这是iphone6s",
+          keywords: "iphone6s",
+          pid: "5b9a69fb3e7dc24660bd9b81",
+          addTime: "2018-01-01T00:00:00.000Z",
+        },
+      ];
+
+      function arrayToTree(array) {
+        // 删除 所有 children,以防止多次调用
+        // data.forEach(function (item) {
+        //   delete item.children;
+        // });
+
+        // 将数据存在为 以id为key的map索引数据
+        const map = {};
+        array.forEach((item) => {
+          map[item._id] = item;
+        });
+        const tree = [];
+        array.forEach((v) => {
+          let parent = map[v.pid];
+          console.log("parent.....", parent);
+          if (parent) {
+            (parent.children || (parent.children = [])).push(v);
+          } else {
+            tree.push(v);
+          }
+        });
+
+        console.log('val..........', tree);
+        return {
+          tree: tree,
+          map,
+        };
+      }
+
+      arrayToTree(data);
+    </script>
+  </body>
+</html>

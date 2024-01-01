@@ -22,7 +22,7 @@ const p3 = new Promise((resolve, reject) => {
 // 只要有一个变成fulfilled, 那么就结束。
 Promise.race([p1, p2, p3, "aaa"])
   .then((res) => {
-    console.log(res);
+    console.log('res===', res);
   })
   .catch((err) => {
     console.log(err);

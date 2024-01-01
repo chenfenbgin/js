@@ -1,3 +1,7 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,7 +19,7 @@
     let map = new Map();
     map.set(obj, "chenxiu.com");
     // 通过键拿到值
-    console.log(map.get(obj));
+    console.log('map: ', map, map.get(obj));
     // 删除, 返回true 、false
     console.log(map.delete("abc")); //false
     console.log(map.delete(obj)); //true
@@ -29,6 +33,7 @@
       ["age", "12"],
       ["addredd", "北京"],
     ]);
+    console.log('遍历。。。');
     console.log(hd.keys()); //MapIterator {'name', 'age', 'addredd'}
     console.log(hd.values()); //MapIterator {'小明', '12', '北京'}
     console.log(hd.entries()); //MapIterator {'name' => '小明', 'age' => '12', 'addredd' => '北京'}

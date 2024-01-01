@@ -1,3 +1,7 @@
+/*
+ * @des: ''
+ * @author: fengbin.chen
+ */
 var name = "chen";
 var age = 23;
 
@@ -6,7 +10,9 @@ var obj = {
   age,
 
   foo: function () {},
-  bar() {},
+  bar() {
+    console.log('bar........');
+  },
   // 计算属性名
   [name + 123]: 'hahaha'
 };

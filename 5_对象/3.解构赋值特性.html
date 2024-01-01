@@ -1,3 +1,7 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,9 +16,9 @@
       name: "张三",
       age: 23,
     };
-    console.log(user);
+    console.log('user: ', user);
     const { name, age } = user;
-    console.log(age);
+    console.log('age: ', age);
 
     // 只要是对象，就能解构
     function hd() {
@@ -22,7 +26,7 @@
     }
     // 左边是元数据：右边是要赋值的变量
     let { name: name1, age: age1 } = hd();
-    console.log(name1, age1);
+    console.log('name1, age1: ', name1, age1);
 
     // 数组的解构
     let arr = ["王五", "张三"];

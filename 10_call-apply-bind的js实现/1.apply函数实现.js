@@ -1,6 +1,11 @@
+/*
+ * @des: ''
+ * @author: fengbin.chen
+ */
 // 自己实现的apply函数
 Function.prototype.nsapply = function (thisArg, args) {
   // 1.获取到要执行的函数
+  console.log('参数： ', thisArg, args);
   console.log('真实需要调用的this===', this); // 这里是 sum()
   var fn = this;
   // 2.处理绑定的thisArg

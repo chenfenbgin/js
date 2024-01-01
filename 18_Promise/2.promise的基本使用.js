@@ -1,3 +1,7 @@
+/*
+ * @des: ''
+ * @author: fengbin.chen
+ */
 class Person {
   constructor(callback) {
     let foo = function () {};
@@ -15,11 +19,11 @@ const p = new Person((foo, bar) => {
 const promise = new Promise((resolve, reject) => {
   console.log("promise传入的参数被执行了");
   // 本身是可以执行的
-  resolve();    // resolve(), 来到promise.then(() =>{})
+  // resolve();    // resolve(), 来到promise.then(() =>{})
   // reject();  如果是调用reject(), 它会来到promise.catch(()=>{})
 });
 
 // then方法传入的函数，会在promise执行resolve函数是被回调。
 promise.then(() => {
-  console.log('then被执行了');
+  console.log('then被执行了, then方法传入的函数，会在promise执行resolve函数是被回调。');
 });

@@ -1,3 +1,7 @@
+/*
+ * @des: ''
+ * @author: fengbin.chen
+ */
 function Person(name, age) {
   this.name = name;
   this.age = age;

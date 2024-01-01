@@ -1,3 +1,7 @@
+<!--
+ * @des: ''
+ * @author: fengbin.chen
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,9 +33,10 @@
     // call与apply的区别在于参数上
     function User(web, url) {
       console.log(web + url + this.name);
+      console.log(`${web}, ${url}, ${this.name}`);
     }
     User.call(lisi, "陈秀", "chenxiu.com");
-    User.call(lisi, ["陈秀", "chenxiu.com"]);
+    User.apply(lisi, ["陈shabi.....", "chenxiu.com"]);
 
     console.log("=============");
     // 例子1：点击按钮，拿到内容
@@ -49,9 +54,9 @@
     // 例子2:获取最大值, Max这个函数只能是多个参数进行传递
     console.log(Math.max(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
     // 如果传递的是数组， 方式一：我们需要进行展开
-    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     console.log(Math.max(...arr));
     //方式二：
     console.log(Math.max.apply(Math, arr));
-</script>
+  </script>
 </html>

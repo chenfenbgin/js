@@ -1,3 +1,7 @@
+/*
+ * @des: ''
+ * @author: fengbin.chen
+ */
 //默认绑定：独立函数调用
 // 案例1
 // function foo() {
@@ -7,19 +11,19 @@
 // foo();
 
 //案例2
-// function foo1() {
-//   console.log(this); //window
-// }
-// function foo2() {
-//   console.log(this); //window
-//   foo1();
-// }
-// function foo3() {
-//   console.log(this); //window
-//   foo2();
-// }
+function foo1() {
+  console.log(this); //window
+}
+function foo2() {
+  console.log(this); //window
+  foo1();
+}
+function foo3() {
+  console.log(this); //window
+  foo2();
+}
 
-// foo3();
+foo3();
 
 // 案例3
 // var obj = {

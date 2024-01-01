@@ -1,3 +1,7 @@
+/*
+ * @des: ''
+ * @author: fengbin.chen
+ */
 // 判断一个值是不是对象
 function isObject(value) {
   const valueType = typeof value;
@@ -38,6 +42,7 @@ function deepClone(originValue, map = new WeakMap()) {
   const newObject = Array.isArray(originValue) ? [] : {};
   map.set(originValue, newObject);
   for (const key in originValue) {
+    console.log('key:===', key );
     newObject[key] = deepClone(originValue[key], map);
   }
 

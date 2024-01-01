@@ -19,6 +19,7 @@
       lists: ["js", "css", "mysql"],
       // 使用箭头函数的方式
       show: function () {
+        console.log('父级this: ', this);
         return this.lists.map((value) => {
           console.log(this);
           //this直向的是lesson，可以理解为箭头函数中的this指向的是上下文，即指向的是父级作用域中的this

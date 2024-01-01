@@ -1,3 +1,7 @@
+/*
+ * @des: ''
+ * @author: fengbin.chen
+ */
 const obj = {
   name: "chen",
   age: 23,
@@ -30,4 +34,4 @@ Object.keys(obj).forEach((item) => {
 });
 obj.name = "kobe"; //set设置
 obj.age = 23; //set设置
-console.log(obj); //{ name: [Getter/Setter], age: [Getter/Setter], item: 23 }
+console.log(obj, obj.name); //{ name: [Getter/Setter], age: [Getter/Setter], item: 23 }

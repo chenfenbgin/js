@@ -1,3 +1,7 @@
+/*
+ * @des: ''
+ * @author: fengbin.chen
+ */
 const p1 = new Promise((resolve, reject) => {
   console.log('1----');
   resolve(111);
