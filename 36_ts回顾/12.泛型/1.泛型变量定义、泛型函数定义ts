@@ -1,0 +1,17 @@
+// 1、组件不仅能够支持当前的数据类型，同时也能支持未来的数据类型
+// function getData(value: string): string {
+//   return value;
+// }
+
+// 2、同时返回string类型 、 number类型
+// any放弃了类型检查，传入什么，返回什么。
+// function getData(value: any): any {
+//   return value;
+// }
+
+// 3、引入泛型，同时支持返回数字和字符串两种类型
+function getData<T>(value: T): T {
+  return value;
+}
+console.log("--------", getData<number>(123));
+console.log("--------", getData<string>("456"));
