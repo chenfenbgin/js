@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <button id="get">GET</button>
+    <button id="post">POST</button>
+    <button id="delete">delete测试预检请求</button>
+    <button id="jsonp">jsonp</button>
+
+    <script>
+      $(function () {
+        $("#get").on("click", function () {
+          $.ajax({
+            type: "GET",
+            url: "http://localhost/api/get",
+            data: { name: "chenfengbin", age: 22 },
+            success: function (res) {
+              console.log("res: ", res);
+            },
+          });
+        });
+        $("#delete").on("click", function () {
+          $.ajax({
+            type: "delete",
+            url: "http://localhost/api/delete",
+            data: { name: "chenfengbin", age: 22 },
+            success: function (res) {
+              console.log("delete: ", res);
+            },
+          });
+        });
+        $("#jsonp").on("click", function () {
+          $.ajax({
+            type: "get",
+            dataType: "jsonp",
+            url: "http://localhost/api/jsonp",
+            success: function (res) {
+              console.log("jsonp: ", res);
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
